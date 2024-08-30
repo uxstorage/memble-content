@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPBEAT 2024 셔틀버스 정보</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container, .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .main-title {
+            font-size: 36px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        footer {
+            background: linear-gradient(180deg, #5653FE 0%, #9C5BF0 100%);
+            color: white;
+            padding: 40px 0;
+        }
+        .footer-content {
+            display: flex;
+            align-items: flex-start;
+            padding: 0 20px;
+        }
+        .footer-logo {
+            width: 120px;
+            margin-right: 40px;
+        }
+        .footer-text {
+            flex: 1;
+        }
+        .footer-text p {
+            margin: 10px 0;
+        }
+        footer a, 
+        footer a:visited, 
+        footer a:hover, 
+        footer a:active {
+            color: white;
+            text-decoration: none;
+        }
+        .social-link img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            max-height: 300px;
+        }
+        .text-block {
+            margin-bottom: 16px;
+        }
+        .shuttle-info {
+            margin-top: 16px;
+        }
+        .shuttle-route-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 16px;
+            margin-bottom: 4px;
+        }
+        .shuttle-route-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .highlight {
+            background-color: #f3f0ff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(86, 83, 254, 0.1);
+            margin: 24px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #5653FE, #9C5BF0);
+        }
+        .highlight::after {
+            content: '💡';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #5653FE 0%, #9C5BF0 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+        .kakao-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .image-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dot-indicators {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #5653FE;
+        }
+
+        @media (min-width: 761px) {
+            .image-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            .slide {
+                width: 48%;
+            }
+            .dot-indicators {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .image-container {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                overflow-x: auto;
+                white-space: nowrap;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .image-container::-webkit-scrollbar {
+                display: none;
+            }
+            .slide {
+                display: inline-block;
+                width: 100%;
+                scroll-snap-align: start;
+            }
+            .dot-indicators {
+                display: block;
+            }
+            .cta-button {
+                display: flex;
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">RAPBEAT 2024 셔틀버스 OPEN: 랩처럼 빠르게 festival로 GO! GO!</h1>
+
+        <div class="text-block">힙합 팬 여러분, 귀 기울이세요! RAPBEAT 2024를 더욱 스웨그 넘치게 즐길 수 있는 꿀 정보가 드롭됐습니다!</div>
+
+        <div class="text-block">🚌 총 14개의 초특급 셔틀버스 노선이 여러분을 기다리고 있어요. 마치 랩 가사처럼 절묘하게 짜인 이 노선들, 놓치면 안 되겠죠?</div>
+
+        <div class="section-title">RAPBEAT 셔틀스 라인업</div>
+
+        <div class="image-container">
+            <div class="slide">
+                <img src="../Memble 홈 콘텐츠/image/bus1.png" alt="버스 안내 이미지 1">
+            </div>
+            <div class="slide">
+                <img src="../Memble 홈 콘텐츠/image/bus2.png" alt="버스 안내 이미지 2">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+
+        <div class="shuttle-info">
+            <div class="shuttle-route-title">서울 & 수도권 노선</div>
+            <div class="shuttle-route-description">10개의 핫한 노선 - 마치 TOP 10 차트 같아요!</div>
+            
+            <div class="shuttle-route-title">전국 주요 도시 노선</div>
+            <div class="shuttle-route-description">4개의 메인 노선 (대전, 대구, 광주, 부산) - 4대 도시를 연결하는 힙합 사이퍼!</div>
+        </div>
+
+        <div class="highlight">
+            여기서 꿀팁! 지금 RAPBEAT 특가로 티켓 땡길 수 있다는 소식! 마치 레어 앨범을 발견한 것처럼 귀중한 기회예요.
+        </div>
+
+        <div class="section-title">셔틀버스 예매하는 방법</div>
+        <ol class="booking-steps">
+            <li>카카오T 앱을 여세요 (힙합 비트 켜는 것처럼 쉽죠?)</li>
+            <li>상단의 "여행" 탭을 찾아 클릭! (여행이 곧 힙합)</li>
+            <li>"페스티벌" 찾아 탭! (페스티벌 없인 못 살아~)</li>
+            <li>"RAPBEAT 2024" 찾아 원하는 노선과 인원 선택!</li>
+        </ol>
+
+        <div class="highlight">
+            주의! 버스 안 타면 어떻게 되냐고요? 음... 랩 가사 없는 비처럼 되겠죠? 아님 마이크 없는 MC? 혹은 립싱크하는 래퍼? 아... 이건 좀 아니죠?
+        </div>
+
+        <div class="text-block">그러니까 여러분, 셔틀버스로 편하게 오세요! 여러분의 에너지는 댄스플로어에서 폭발하시길! 🎤🔥</div>
+
+        <div class="text-block">자, 이제 예매 버튼을 힘차게 눌러주세요! RAPBEAT 2024에서 만나요, 힙합 패밀리! ✌️</div>
+
+        <a href="https://shuttle.kakaomobility.com/shuttles/tags?tag=%EB%9E%A9%EB%B9%84%ED%8A%B8" class="cta-button">
+            <img src="../Memble 홈 콘텐츠/image/kakakot.jpg" alt="카카오T 아이콘" class="kakao-icon">
+            셔틀버스 예매하기
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="../Memble 홈 콘텐츠/image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
+            <div class="footer-text">
+                <p>
+                    주최 | <a href="https://culturethink.net/" target="_blank">CULTURE THINK</a>
+                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                        <img src="../Memble 홈 콘텐츠/image/insta.png" alt="인스타그램">
+                    </a>
+                </p>
+                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const slider = document.querySelector('.image-container');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let startX;
+        let scrollLeft;
+        let isDown = false;
+
+        function showSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+
+            slider.scrollTo({
+                left: slides[index].offsetLeft,
+                behavior: 'smooth'
+            });
+
+            updateDots(index);
+            currentIndex = index;
+        }
+
+        function updateDots(index) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        slider.addEventListener('scroll', () => {
+            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+            if (index !== currentIndex) {
+                updateDots(index);
+                currentIndex = index;
+            }
+        });
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // 새로운 코드 추가
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+    </script>
+</body>
+</html>
