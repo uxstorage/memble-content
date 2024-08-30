@@ -14,13 +14,14 @@
             background-color: #f8f9fa;
         }
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            box-sizing: border-box;
         }
         .main-title {
-            font-size: 48px;
+            font-size: 36px;
             line-height: 1.3;
             margin-bottom: 30px;
             font-weight: 800;
@@ -53,7 +54,8 @@
         }
         .page-link-thumbnail {
             width: 100%;
-            height: 200px;
+            height: auto;
+            max-height: 200px;
             object-fit: cover;
         }
         .page-link-content {
@@ -105,6 +107,18 @@
             height: 20px;
             vertical-align: middle;
             margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 28px;
+            }
+            .page-link h2 {
+                font-size: 20px;
+            }
+            .page-link p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
