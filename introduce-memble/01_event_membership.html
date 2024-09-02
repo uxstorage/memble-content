@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memble - 당신의 특별한 순간</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 16px;
+        }
+        .hero-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .main-title {
+            font-size: 32px;
+            margin-bottom: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #5653FE;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-top: 56px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            color: #5653FE;
+        }
+        .text-block {
+            font-size: 18px;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+        .section-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        .tip {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0 64px 0;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tip strong {
+            color: #5653FE;
+            font-size: 18px;
+        }
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        li {
+            margin-bottom: 16px;
+        }
+        footer {
+            background: linear-gradient(180deg, #5653FE 0%, #9C5BF0 100%);
+            color: white;
+            padding: 64px 0;
+        }
+        .footer-content {
+            display: flex;
+            align-items: flex-start;
+            padding: 0 16px;
+        }
+        .footer-logo {
+            width: 128px;
+            margin-right: 32px;
+        }
+        .footer-text {
+            flex: 1;
+        }
+        .footer-text p {
+            margin: 8px 0;
+        }
+        footer a, 
+        footer a:visited, 
+        footer a:hover, 
+        footer a:active {
+            color: white;
+            text-decoration: none;
+        }
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        .image-container {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .image-container::-webkit-scrollbar {
+            display: none;
+        }
+        .slide {
+            display: inline-block;
+            width: 100%;
+            scroll-snap-align: start;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .dot-indicators {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #5653FE;
+        }
+
+        @media (min-width: 768px) {
+            .image-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            .slide {
+                width: 48%;
+            }
+            .dot-indicators {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <img src="https://via.placeholder.com/1200x400.png?text=Memble+Hero+Image" alt="Memble 히어로 이미지" class="hero-image">
+    </div>
+    
+    <div class="container">
+        <h1 class="main-title">🎉 Memble과 함께 특별한 순간을 만들어보세요!</h1>
+        
+        <div class="text-block">여기서 당신의 특별한 경험이 시작됩니다. Memble과 함께 잊지 못할 순간을 만들어보세요!</div>
+        
+        <h2 class="section-title">🎵 이벤트 둘러보기</h2>
+
+        <div class="image-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+1" alt="Memble 이벤트 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+2" alt="Memble 이벤트 2">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+        
+        <div class="text-block">메인 화면에서 다양한 이벤트의 세계로 빠져보세요:</div>
+        <ul>
+            <li>화려한 포스터로 이벤트의 분위기를 생생하게 느껴보세요</li>
+            <li>이벤트 이름, 날짜, 장소 등 핵심 정보를 한눈에 확인할 수 있어요</li>
+            <li>손가락 하나로 여러 이벤트를 슬라이드하며 구경해보세요</li>
+        </ul>
+        
+        <div class="text-block">RAPBEAT Festival 2024부터 이색적인 문화 행사까지, 다채로운 이벤트들이 여러분을 기다리고 있어요!</div>
+        
+        <div class="tip">
+            <strong>💡 꿀팁:</strong> 관심 있는 이벤트는 자주 확인해보세요. 티켓 오픈일을 놓치지 않는 게 핵심이에요!
+        </div>
+
+        
+
+        <h2 class="section-title">💎 나의 멤버십</h2>
+        
+        <div class="image-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+1" alt="Memble 이벤트 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+2" alt="Memble 이벤트 2">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+
+        <div class="text-block">멤버십으로 특별한 경험을 더욱 특별하게 만들어보세요:</div>
+        <ul>
+            <li>등록된 멤버십으로 VIP가 된 것 같은 특별한 혜택을 누리세요</li>
+            <li>QR코드 한 번으로 빠른 입장! 줄 서는 시간을 아껴 더 많은 즐거움을 누리세요</li>
+            <li>멤버십 등급에 따라 다양한 특전을 확인해보세요. 어떤 놀라운 혜택이 기다리고 있을까요?</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>💡 꿀팁:</strong> 멤버십 카드를 눌러보세요. 숨겨진 정보나 특별 옵션을 발견할 수 있어요!
+        </div>
+
+        <h2 class="section-title">🎁 새로운 경험의 문</h2>
+
+        <div class="image-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+1" alt="Memble 이벤트 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/600x400.png?text=Memble+Event+2" alt="Memble 이벤트 2">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+        
+        <div class="text-block">새로운 경험으로 가득한 Memble을 탐험해보세요:</div>
+        <ul>
+            <li>인기 있는 멤버십을 놓치지 마세요. 한정판 멤버십은 순식간에 매진될 수 있어요!</li>
+            <li>선물 받은 코드가 있나요? 쉽고 빠르게 등록하고 특별한 혜택을 누려보세요</li>
+            <li>시시각각 변하는 특별 프로모션을 체크해보세요. 깜짝 할인이나 추가 혜택의 기회를 잡아보세요!</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>💡 꿀팁:</strong> 프로필 설정에서 관심사를 등록해두면, 당신의 취향에 꼭 맞는 이벤트 추천을 받을 수 있어요!
+        </div>
+        
+        <h2 class="section-title">💡 Memble 200% 활용하기</h2>
+        
+        <ol>
+            <li>멤버십 구매 전, 혜택 내용을 꼼꼼히 확인하세요. 숨겨진 보석 같은 혜택을 발견할 수 있어요!</li>
+            <li>이벤트 당일에는 QR코드를 미리 준비해두세요. 밝기를 최대로 해두면 더 빠르게 인식된답니다.</li>
+            <li>친구와 함께 가나요? 멤버십 공유 기능을 활용해보세요. 함께 할 때 더 즐거워져요!</li>
+            <li>이벤트 후기를 남겨보세요. 다음 이벤트 선택에 도움이 될 뿐만 아니라, 특별한 리워드가 기다리고 있을지도 몰라요!</li>
+        </ol>
+
+        <div class="text-block">Memble과 함께라면 모든 순간이 특별해집니다. 당신만의 잊지 못할 추억을 만들어보세요. 특별한 경험이 바로 여기, Memble에서 여러분을 기다리고 있습니다! ✨</div>
+        
+        <div class="text-block">자, 이제 당신의 Memble 여정을 시작해볼까요? 어떤 놀라운 일들이 기다리고 있을지 정말 기대되지 않나요? 😉</div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
+            <div class="footer-text">
+                <p>
+                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                    </a>
+                </p>
+                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const slider = document.querySelector('.image-container');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let startX;
+        let scrollLeft;
+        let isDown = false;
+
+        function showSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+
+            slider.scrollTo({
+                left: slides[index].offsetLeft,
+                behavior: 'smooth'
+            });
+
+            updateDots(index);
+            currentIndex = index;
+        }
+
+        function updateDots(index) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        slider.addEventListener('scroll', () => {
+            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+            if (index !== currentIndex) {
+                updateDots(index);
+                currentIndex = index;
+            }
+        });
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+    </script>
+</body>
+</html>
