@@ -188,18 +188,18 @@
             overflow: hidden;
         }
         .skeleton-card {
-            background-color: #e3e3e3; /* 카드 배경색 */
-            padding: 16px;
-            border-radius: 8px;
+            background-color: #f0f0f0; /* 카드 배경색 */
+            padding: 20px;
+            border-radius: 16px;
             position: relative;
             overflow: hidden;
         }
 
         .skeleton-thumbnail {
             position: relative;
-            background-color: #d0d0d0; /* 어두운 회색 */
+            background-color: #d3d3d3; /* 어두운 회색 */
             width: 100%; /* 썸네일 너비 */
-            height: 100px; /* 썸네일 높이 */
+            height: 120px; /* 썸네일 높이 */
             margin-bottom: 10px;
             overflow: hidden;
             border-radius: 16px;
@@ -207,8 +207,8 @@
 
         .skeleton-title {
             position: relative;
-            background-color: #d0d0d0; /* 어두운 회색 */
-            width: 80%; /* 제목 너비 */
+            background-color: #d3d3d3; /* 중간 회색 */
+            width: 100%; /* 제목 너비 */
             height: 20px; /* 제목 높이 */
             margin-bottom: 10px;
             overflow: hidden;
@@ -217,9 +217,9 @@
 
         .skeleton-description {
             position: relative;
-            background-color: #d0d0d0; /* 어두운 회색 */
-            width: 90%; /* 설명 너비 */
-            height: 15px; /* 설명 높이 */
+            background-color: #d3d3d3; /* 밝은 회색 */
+            width: 70%; /* 설명 너비 */
+            height: 20px; /* 설명 높이 */
             margin-bottom: 10px;
             overflow: hidden;
             border-radius: 16px;
@@ -234,7 +234,28 @@
             top: 0;
             left: -150px;
             height: 100%;
-            width: 150px;
+            width: 50px;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 100%);
+            animation: loading 2.0s infinite;
+        }
+
+        .skeleton-tab {
+            background-color: #e2e2e2;
+            border-radius: 20px;
+            margin-right: 10px;
+            position: relative;
+            overflow: hidden;
+            width: 350px;
+        }
+
+        .skeleton-tab::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 100%;
+            width: 250px;
             background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 100%);
             animation: loading 2.0s infinite;
         }
@@ -247,6 +268,10 @@
                 left: 100%;
             }
         }
+
+        .tablinks {
+            visibility: hidden; /* 초기에는 실제 탭 숨기기 */
+        }
     </style>
 </head>
 <body>
@@ -254,6 +279,9 @@
     <div class="wrapper">
         <h1 class="main-title">Memble Insider</h1>
         <div class="tab">
+            <div class="skeleton-tab"></div>
+            <div class="skeleton-tab"></div>
+            <div class="skeleton-tab"></div>
             <button class="tablinks" onclick="openTab(event, 'rapbeat')">RAPBEAT</button>
             <button class="tablinks" onclick="openTab(event, 'memble')"> 가이드북</button>
         </div>
@@ -293,7 +321,7 @@
                     <!-- 실제 콘텐츠 -->
                     <div class="page-link actual-content" style="display: none;">
                         <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
-                            <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
+                            <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸���일" class="page-link-thumbnail">
                             <div class="page-link-content">
                                 <h2>관람 유의사항</h2>
                                 <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
@@ -361,9 +389,13 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector(".tablinks").click();
             setTimeout(function() {
-                var skeletons = document.querySelectorAll('.skeleton');
+                var skeletons = document.querySelectorAll('.skeleton, .skeleton-tab');
                 skeletons.forEach(function(skeleton) {
                     skeleton.style.display = 'none'; // 스켈레톤 요소 숨기기
+                });
+                var actualTabs = document.querySelectorAll('.tablinks');
+                actualTabs.forEach(function(tab) {
+                    tab.style.visibility = 'visible'; // 실제 탭 표시
                 });
                 var actualContents = document.querySelectorAll('.actual-content');
                 actualContents.forEach(function(content) {
