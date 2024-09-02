@@ -261,7 +261,7 @@
             <li>이벤트 후기를 남겨보세요. 다음 이벤트 선택에 도움이 될 뿐만 아니라, 특별한 리워드가 기다리고 있을지도 몰라요!</li>
         </ol>
 
-        <div class="text-block">Memble과 함께라면 모든 순간이 특별해집니다. 당신만의 잊지 못할 추억을 만들어보세요. 특별한 경험이 바로 여기, Memble에서 여러분을 기다리고 있습니다! ✨</div>
+        <div class="text-block">Memble과 함께라면 모든 순간이 특해집니다. 당신만의 잊지 못할 추억을 만들어보세요. 특별한 경험이 바로 여기, Memble에서 여러분을 기다리고 있습니다! ✨</div>
         
         <div class="text-block">자, 이제 당신의 Memble 여정을 시작해볼까요? 어떤 놀라운 일들이 기다리고 있을지 정말 기대되지 않나요? 😉</div>
     </div>
@@ -279,70 +279,80 @@
         </div>
     </footer>
     <script>
-        const slider = document.querySelector('.image-container');
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        let currentIndex = 0;
-        let startX;
-        let scrollLeft;
-        let isDown = false;
+        function initializeSliders() {
+            const sliders = document.querySelectorAll('.image-container');
+            
+            sliders.forEach((slider, sliderIndex) => {
+                const slides = slider.querySelectorAll('.slide');
+                const dots = slider.nextElementSibling.querySelectorAll('.dot');
+                let currentIndex = 0;
+                let startX;
+                let scrollLeft;
+                let isDown = false;
 
-        function showSlide(index) {
-            if (index < 0) index = slides.length - 1;
-            if (index >= slides.length) index = 0;
+                function showSlide(index) {
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
 
-            slider.scrollTo({
-                left: slides[index].offsetLeft,
-                behavior: 'smooth'
+                    slider.scrollTo({
+                        left: slides[index].offsetLeft,
+                        behavior: 'smooth'
+                    });
+
+                    updateDots(index);
+                    currentIndex = index;
+                }
+
+                function updateDots(index) {
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+
+                function currentSlide(index) {
+                    showSlide(index);
+                }
+
+                slider.addEventListener('scroll', () => {
+                    const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                    if (index !== currentIndex) {
+                        updateDots(index);
+                        currentIndex = index;
+                    }
+                });
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('active');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => currentSlide(index));
+                });
             });
-
-            updateDots(index);
-            currentIndex = index;
         }
 
-        function updateDots(index) {
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        function currentSlide(index) {
-            showSlide(index);
-        }
-
-        slider.addEventListener('scroll', () => {
-            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
-            if (index !== currentIndex) {
-                updateDots(index);
-                currentIndex = index;
-            }
-        });
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('active');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('active');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-
+        document.addEventListener('DOMContentLoaded', initializeSliders);
         document.body.style.overflow = 'auto';
         document.documentElement.style.overflow = 'auto';
     </script>
