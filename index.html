@@ -55,7 +55,7 @@
         }
         .page-link {
             flex: 1 1 calc(33.333% - 40px); /* 3개의 카드가 한 줄에 배치되도록 설정 */
-            max-width: calc(33.333% - 40px); /* 최대 너비 설정 */
+            max-width: calc(33.333% - 40px); /* 최대 너비  */
             background-color: #fff;
             border-radius: 16px;
             overflow: hidden;
@@ -179,6 +179,74 @@
         .tab-content.active {
             display: flex;
         }
+        .skeleton {
+            background-color: #e0e0e0;
+            border-radius: 16px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .skeleton-card {
+            background-color: #e3e3e3; /* 카드 배경색 */
+            padding: 16px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skeleton-thumbnail {
+            position: relative;
+            background-color: #d0d0d0; /* 어두운 회색 */
+            width: 100%; /* 썸네일 너비 */
+            height: 100px; /* 썸네일 높이 */
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .skeleton-title {
+            position: relative;
+            background-color: #d0d0d0; /* 어두운 회색 */
+            width: 80%; /* 제목 너비 */
+            height: 20px; /* 제목 높이 */
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .skeleton-description {
+            position: relative;
+            background-color: #d0d0d0; /* 어두운 회색 */
+            width: 90%; /* 설명 너비 */
+            height: 15px; /* 설명 높이 */
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .skeleton-thumbnail::before,
+        .skeleton-title::before,
+        .skeleton-description::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 100%;
+            width: 150px;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 100%);
+            animation: loading 2.0s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                left: -150px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,32 +255,69 @@
         <h1 class="main-title">Memble Insider</h1>
         <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'rapbeat')">RAPBEAT</button>
-            <button class="tablinks" onclick="openTab(event, 'memble')">멤블 가이드</button>
+            <button class="tablinks" onclick="openTab(event, 'memble')"> 가이드북</button>
         </div>
         <div id="rapbeat" class="tab-content">
             <div class="container">
                 <div class="page-links">
-                    <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
-                        <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
-                        <div class="page-link-content">
-                            <h2>관람 유의사항</h2>
-                            <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
-                        <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
-                        <div class="page-link-content">
-                            <h2>프리스타일 배틀 이벤트</h2>
-                            <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
+                    </div>
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
-                        <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
-                        <div class="page-link-content">
-                            <h2>셔틀버스 정보</h2>
-                            <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
+                    </div>
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
+                    <!-- 실제 콘텐츠 -->
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
+                            <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>관람 유의사항</h2>
+                                <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
+                            <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>프리스타일 배틀 이벤트</h2>
+                                <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
+                            <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>셔틀버스 정보</h2>
+                                <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,10 +325,10 @@
             <div class="container">
                 <div class="page-links">
                     <a href="introduce-memble/01_event_membership.html" class="page-link">
-                        <img src="introduce-memble/image/insta.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
+                        <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
                         <div class="page-link-content">
                             <h2>EP. 1 이벤트와 멤버십이 뭐에요?</h2>
-                            <p>Memble과 함께 특별한 순간을 만들어 보세요!</p>
+                            <p>Memble과 함께 한 순간을 만들어 보세요!</p>
                         </div>
                     </a>
                 </div>
@@ -252,8 +357,19 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
+
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector(".tablinks").click();
+            setTimeout(function() {
+                var skeletons = document.querySelectorAll('.skeleton');
+                skeletons.forEach(function(skeleton) {
+                    skeleton.style.display = 'none'; // 스켈레톤 요소 숨기기
+                });
+                var actualContents = document.querySelectorAll('.actual-content');
+                actualContents.forEach(function(content) {
+                    content.style.display = 'block'; // 실제 콘텐츠 표시
+                });
+            }, 2000); // 2초 후 스켈레톤 제거 및 실제 콘텐츠 표시
         });
     </script>
 </body>
