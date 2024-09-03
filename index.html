@@ -267,95 +267,111 @@
         }
         .tablinks {
             visibility: hidden;
-            position: absolute; /* 요소를 화면에서 제거 */
+            position: absolute;
         }
-
-
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1; /* 콘텐츠 영역이 남은 공간을 차지하도록 설정 */
+        }
+        footer {
+            background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
+            color: white;
+            padding: 40px 0;
+            margin-top: 40px;
+            flex-shrink: 0; /* 풋터가 줄어들지 않도록 설정 */
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h1 class="main-title">Memble Insider</h1>
-        <div class="tab">
-            <div class="skeleton-tab"></div>
-            <div class="skeleton-tab"></div>
-            <div class="skeleton-tab"></div>
-            <button class="tablinks" onclick="openTab(event, 'rapbeat')">RAPBEAT</button>
-            <button class="tablinks" onclick="openTab(event, 'memble')"> 가이드북</button>
-        </div>
-        <div id="rapbeat" class="tab-content">
-            <div class="container">
-                <div class="page-links">
-                    <div class="page-link skeleton">
-                        <div class="skeleton-card">
-                            <div class="skeleton-thumbnail"></div>
-                            <div class="page-link-content">
-                                <div class="skeleton-title"></div>
-                                <div class="skeleton-description"></div>
-                                <div class="skeleton-description"></div>
+    <div class="content">
+        <div class="wrapper">
+            <h1 class="main-title">Memble Insider</h1>
+            <div class="tab">
+                <div class="skeleton-tab"></div>
+                <div class="skeleton-tab"></div>
+                <div class="skeleton-tab"></div>
+                <button class="tablinks" onclick="openTab(event, 'rapbeat')">RAPBEAT</button>
+                <button class="tablinks" onclick="openTab(event, 'memble')"> 가이드북</button>
+            </div>
+            <div id="rapbeat" class="tab-content">
+                <div class="container">
+                    <div class="page-links">
+                        <div class="page-link skeleton">
+                            <div class="skeleton-card">
+                                <div class="skeleton-thumbnail"></div>
+                                <div class="page-link-content">
+                                    <div class="skeleton-title"></div>
+                                    <div class="skeleton-description"></div>
+                                    <div class="skeleton-description"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page-link skeleton">
-                        <div class="skeleton-card">
-                            <div class="skeleton-thumbnail"></div>
-                            <div class="page-link-content">
-                                <div class="skeleton-title"></div>
-                                <div class="skeleton-description"></div>
-                                <div class="skeleton-description"></div>
+                        <div class="page-link skeleton">
+                            <div class="skeleton-card">
+                                <div class="skeleton-thumbnail"></div>
+                                <div class="page-link-content">
+                                    <div class="skeleton-title"></div>
+                                    <div class="skeleton-description"></div>
+                                    <div class="skeleton-description"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page-link skeleton">
-                        <div class="skeleton-card">
-                            <div class="skeleton-thumbnail"></div>
-                            <div class="page-link-content">
-                                <div class="skeleton-title"></div>
-                                <div class="skeleton-description"></div>
-                                <div class="skeleton-description"></div>
+                        <div class="page-link skeleton">
+                            <div class="skeleton-card">
+                                <div class="skeleton-thumbnail"></div>
+                                <div class="page-link-content">
+                                    <div class="skeleton-title"></div>
+                                    <div class="skeleton-description"></div>
+                                    <div class="skeleton-description"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page-link actual-content" style="display: none;">
-                        <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
-                            <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
-                            <div class="page-link-content">
-                                <h2>관람 유의사항</h2>
-                                <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="page-link actual-content" style="display: none;">
-                        <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
-                            <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
-                            <div class="page-link-content">
-                                <h2>프리스타일 배틀 이벤트</h2>
-                                <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="page-link actual-content" style="display: none;">
-                        <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
-                            <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
-                            <div class="page-link-content">
-                                <h2>셔틀버스 정보</h2>
-                                <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
-                            </div>
-                        </a>
+                        <div class="page-link actual-content" style="display: none;">
+                            <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
+                                <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
+                                <div class="page-link-content">
+                                    <h2>관람 유의사항</h2>
+                                    <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="page-link actual-content" style="display: none;">
+                            <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
+                                <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
+                                <div class="page-link-content">
+                                    <h2>프리스타일 배틀 이벤트</h2>
+                                    <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="page-link actual-content" style="display: none;">
+                            <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
+                                <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
+                                <div class="page-link-content">
+                                    <h2>셔틀버스 정보</h2>
+                                    <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="memble" class="tab-content">
-            <div class="container">
-                <div class="page-links">
-                    <a href="introduce-memble/01_event_membership.html" class="page-link">
-                        <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
-                        <div class="page-link-content">
-                            <h2>EP. 1 이벤트와 멤버십이 뭐에요?</h2>
-                            <p>Memble과 함께 한 순간을 만들어 보세요!</p>
-                        </div>
-                    </a>
+            <div id="memble" class="tab-content">
+                <div class="container">
+                    <div class="page-links">
+                        <a href="introduce-memble/01_event_membership.html" class="page-link">
+                            <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>EP. 1 이벤트와 멤버십이 뭐에요?</h2>
+                                <p>Memble과 함께 한 순간을 만들어 보세요!</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
