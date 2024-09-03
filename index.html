@@ -408,13 +408,13 @@
                 var actualTabs = document.querySelectorAll('.tablinks');
                 actualTabs.forEach(function(tab) {
                     tab.style.visibility = 'visible';
-                    tab.style.position = 'static'; // position을 static으로 변경
+                    tab.style.position = 'static';
                 });
                 var actualContents = document.querySelectorAll('.actual-content');
                 actualContents.forEach(function(content) {
                     content.style.display = 'block';
                 });
-            }, 2000);
+            }, 1000);
         });
     </script>
 </body>
