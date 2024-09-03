@@ -185,6 +185,52 @@
             font-style: italic;
             color: #666;
         }
+        .blockchain-networks {
+            background-color: #f0f0ff;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .blockchain-networks h4 {
+            color: #5653FE;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .network-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .network-card {
+            flex: 1 1 200px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .network-name {
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        .currency-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .currency {
+            background-color: #e6e6fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .default-setting {
+            margin-top: 16px;
+            font-weight: bold;
+            color: #5653FE;
+        }
     </style>
 </head>
 <body>
@@ -328,39 +374,23 @@
 
             <div class="blockchain-networks">
                 <h4>지원되는 네트워크와 화폐</h4>
-                <ul>
-                    <li><span class="network">Ethereum</span> - <span class="currency">USDT</span>, <span class="currency">USDC</span></li>
-                    <li><span class="network">Avalanche C-Chain</span> - <span class="currency">USDC</span></li>
-                </ul>
-                <p>기본 설정: <span class="default-setting">Ethereum - USDT</span> (변경 가능!)</p>
+                <div class="network-cards">
+                    <div class="network-card">
+                        <div class="network-name">Ethereum</div>
+                        <div class="currency-list">
+                            <span class="currency">USDT</span>
+                            <span class="currency">USDC</span>
+                        </div>
+                    </div>
+                    <div class="network-card">
+                        <div class="network-name">Avalanche C-Chain</div>
+                        <div class="currency-list">
+                            <span class="currency">USDC</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="default-setting">기본 설정: Ethereum - USDT (변경 가능!)</p>
             </div>
-
-            <style>
-                .blockchain-networks {
-                    background-color: #f0f0ff;
-                    border-radius: 8px;
-                    padding: 20px;
-                    margin: 20px 0;
-                }
-                .blockchain-networks h4 {
-                    color: #5653FE;
-                    margin-bottom: 15px;
-                }
-                .network {
-                    font-weight: bold;
-                    color: #4a4a4a;
-                }
-                .currency {
-                    background-color: #e6e6fa;
-                    padding: 2px 6px;
-                    border-radius: 4px;
-                    font-size: 0.9em;
-                }
-                .default-setting {
-                    font-weight: bold;
-                    color: #5653FE;
-                }
-            </style>
 
             <div class="text-block">
                 "와! 블록체인으로 결제한다니, 정말 미래지향적이에요. 한번 써봐야겠어요."
