@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memble - 샵 소개 및 구매 가이드</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 16px;
+        }
+        .hero-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .main-title {
+            font-size: 32px;
+            margin-bottom: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #5653FE;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-top: 56px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            color: #5653FE;
+        }
+        .text-block {
+            font-size: 18px;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+        .image-container {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .image-container::-webkit-scrollbar {
+            display: none;
+        }
+        .slide {
+            display: inline-block;
+            width: 100%;
+            scroll-snap-align: start;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .dot-indicators {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #5653FE;
+        }
+        .tab {
+            display: flex;
+            border-bottom: 1px solid rgba(69, 69, 79, 0.1);
+            margin-bottom: 32px;
+        }
+        .tab button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            font-weight: bold;
+            color: rgba(69, 69, 79, 0.5);
+        }
+        .tab button:hover {
+            color: rgba(69, 69, 79, 1);
+        }
+        .tab button.active {
+            color: #5653FE;
+            border-bottom: 2px solid #5653FE;
+        }
+        .tabcontent {
+            display: none;
+            animation: fadeEffect 1s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        li {
+            margin-bottom: 16px;
+        }
+        .tip {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0 64px 0;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tip strong {
+            color: #5653FE;
+            font-size: 18px;
+        }
+        @media (min-width: 768px) {
+            .image-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            .slide {
+                width: 48%;
+            }
+            .dot-indicators {
+                display: none;
+            }
+        }
+        .membership-example {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .membership-example h4 {
+            color: #5653FE;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .membership-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .membership-detail {
+            flex: 1 1 200px;
+            background-color: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .detail-label {
+            font-weight: bold;
+            color: #5653FE;
+            margin-bottom: 8px;
+        }
+        .detail-value {
+            font-size: 16px;
+        }
+        .membership-note {
+            margin-top: 16px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <img src="https://via.placeholder.com/1200x400.png?text=Memble+Shop+Guide" alt="Memble 샵 가이드" class="hero-image">
+    </div>
+    
+    <div class="container">
+        <h1 class="main-title">Memble 샵 소개 및 구매 가이드</h1>
+        
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'ShopExplore')">샵 둘러보기</button>
+            <button class="tablinks" onclick="openTab(event, 'PurchaseGuide')">구매하기</button>
+        </div>
+
+        <div id="ShopExplore" class="tabcontent" style="display:block;">
+            <h2 class="section-title">🎭 멤블(Memble) 멤버십 샵에 오신 것을 환영합니다!</h2>
+            
+            <div class="text-block">
+                여러분을 위한 특별한 공간, 멤블 멤버십 샵에 오신 것을 환영합니다! 이곳에서는 다양한 이벤트와 페스티벌의 경험을 더욱 특별하게 만들어줄 멤버십 상품들이 기다리고 있어요. 함께 둘러볼까요?
+            </div>
+
+            <h3 class="section-title">🌟 프리미엄 멤버십 상품</h3>
+            
+            <div class="text-block">
+                멤블에서는 다양한 이벤트의 최고급 VIP 경험을 제공하는 프리미엄 멤버십을 만나볼 수 있어요. 예를 들어, RAPBEAT 페스티벌의 골드 카바나 멤버십처럼 특별한 혜택과 함께 잊지 못할 경험을 선사합니다.
+            </div>
+
+            <div class="image-container">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x400.png?text=Memble+Premium+Membership" alt="멤블 프리미엄 멤버십">
+                </div>
+            </div>
+
+            <div class="membership-example">
+                <h4>프리미엄 멤버십 예시: RAPBEAT 골드 카바나</h4>
+                <div class="membership-details">
+                    <div class="membership-detail">
+                        <div class="detail-label">혜택</div>
+                        <div class="detail-value">VVIP 멤버십 교환권 27매, 호스트용 VVIP 멤버십 교환권 1매</div>
+                    </div>
+                    <div class="membership-detail">
+                        <div class="detail-label">가격</div>
+                        <div class="detail-value">10,000,000원</div>
+                    </div>
+                    <div class="membership-detail">
+                        <div class="detail-label">수량</div>
+                        <div class="detail-value">1EA (한정 수량)</div>
+                    </div>
+                </div>
+                <p class="membership-note">* 이 멤버십은 예시이며, 실제 제공되는 멤버십은 이벤트에 따라 다를 수 있습니다.</p>
+            </div>
+
+            <div class="text-block">
+                "와! 이런 프리미엄 멤버십으로 친구들과 함께 특별한 경험을 즐길 수 있다니, 정말 기대되네요!"
+            </div>
+
+            <h3 class="section-title">🎁 멤버십 선물하기</h3>
+
+            <div class="text-block">
+                소중한 사람에게 특별한 경험을 선물하고 싶으신가요? 멤블에서는 다양한 멤버십 선물 옵션을 제공합니다. 각 옵션의 특징을 자세히 살펴볼까요?
+            </div>
+
+            <div class="gift-options">
+                <h4>선물 옵션</h4>
+                <ul>
+                    <li>
+                        <span class="option">멤버십 직접 선물하기</span>:
+                        <p>선물 받는 사람의 계정으로 멤버십을 직접 전달합니다. 받는 사람이 즉시 멤버십 혜택을 누릴 수 있어요.</p>
+                    </li>
+                    <li>
+                        <span class="option">멤버십 교환권 선물하기</span>:
+                        <p>구매한 멤버십 패키지에 포함된 교환권 중 하나를 선물합니다. 예를 들어, 10장의 VIP 교환권이 포함된 패키지를 구매하면, 그 중 한 장을 선물할 수 있어요. 받는 사람은 이 교환권을 원하는 시기에 멤버십으로 교환할 수 있습니다.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-block">
+                <strong>교환권 선물하기 예시:</strong><br>
+                "RAPBEAT 페스티벌 VIP 패키지(10장의 교환권 포함)를 구매했어요. 이 중 한 장을 친구 생일 선물로 주고 싶어요. 친구는 이 교환권으로 원하는 날짜에 VIP 혜택을 누릴 수 있겠죠?"
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> 교환권을 선물할 때는 사용 가능한 이벤트와 유효 기간을 꼭 확인해주세요. 받는 사람이 원하는 때에 사용할 수 있도록 미리 안내해주면 더욱 좋아요!
+            </div>
+
+            <h3 class="section-title">💡 멤버십 구매 꿀팁!</h3>
+
+            <div class="text-block">
+                멤블의 다양한 멤버십을 100% 활용하는 방법, 알고 계신가요? 여기 몇 가지 팁을 준비했어요!
+            </div>
+
+            <ul>
+                <li>프리미엄 멤버십은 대부분 수량이 한정되어 있어요. 구매를 원하신다면 서두르세요!</li>
+                <li>VIP 교환권으로 이벤트 당일 특별한 혜택을 누릴 수 있어요. 꼭 챙겨가세요!</li>
+                <li>멤버십 구매 시 세부 이용 안내를 꼼꼼히 확인해보세요. 놓치기 쉬운 특별 혜택이 있을 수 있답니다.</li>
+                <li>이벤트 전 멤버십 관련 공지사항을 주의 깊게 체크해주세요. 중요한 정보가 업데이트될 수 있어요!</li>
+            </ul>
+
+            <div class="text-block">
+                멤블의 다양한 멤버십으로 여러분의 특별한 경험을 한층 더 특별하게 만들어보세요!
+            </div>
+
+            <div class="text-block">
+                "자, 이제 어떤 멤버십을 선택해볼까요? 여러분의 특별한 순간을 더욱 풍성하게 만들어줄 멤블의 다양한 옵션들이 기다리고 있어요! 🎉✨"
+            </div>
+        </div>
+
+        <div id="PurchaseGuide" class="tabcontent">
+            <h2 class="section-title">🌟 멤블(Memble)의 다채로운 결제 세계로 여러분을 초대합니다!</h2>
+            
+            <div class="text-block">
+                여러분의 편의를 최우선으로 생각하는 멤블은 다양한 결제 방식을 준비했어요. 어떤 방법이 여러분의 마음을 사로잡을까요? 함께 알아볼까요?
+            </div>
+
+            <h3 class="section-title">💳 국내 카드로 간편하게</h3>
+            
+            <div class="text-block">
+                국내에 계신 분들을 위한 완벽한 선택, 바로 국내 카드 결제예요. KG이니시스를 통해 안전하고 빠르게 결제할 수 있어요. 여러분이 가진 모든 카드로 결제 가능하니, 걱정 마세요!
+            </div>
+
+            <div class="text-block">
+                "와! 제 카드로 바로 결제할 수 있다니, 정말 편리하네요!"
+            </div>
+
+            <h3 class="section-title">💰 해외에서도 문제없이</h3>
+
+            <div class="text-block">
+                해외에 계신 분들, 걱정 마세요! Paypal을 통해 전 세계 어디서든 결제가 가능해요. 국제 결제도 안전하고 편리하게 이용하실 수 있답니다.
+            </div>
+
+            <div class="text-block">
+                "해외에 있어도 쉽게 결제할 수 있다니, 멤블은 정말 글로벌하네요!"
+            </div>
+
+            <h3 class="section-title">🌐 EQ Hub Pay - 블록체인의 미래를 지금 경험하세요!</h3>
+
+            <div class="text-block">
+                멤블의 자체 서비스인 EQ Hub Pay로 블록체인 기술의 혁신을 직접 체험해보세요! 가상화폐로 빠르고 안전하게 결제할 수 있어요. 미래의 결제 방식을 지금 경험해보세요!
+            </div>
+
+            <div class="blockchain-networks">
+                <h4>지원되는 네트워크와 화폐</h4>
+                <ul>
+                    <li><span class="network">Ethereum</span> - <span class="currency">USDT</span>, <span class="currency">USDC</span></li>
+                    <li><span class="network">Avalanche C-Chain</span> - <span class="currency">USDC</span></li>
+                </ul>
+                <p>기본 설정: <span class="default-setting">Ethereum - USDT</span> (변경 가능!)</p>
+            </div>
+
+            <style>
+                .blockchain-networks {
+                    background-color: #f0f0ff;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .blockchain-networks h4 {
+                    color: #5653FE;
+                    margin-bottom: 15px;
+                }
+                .network {
+                    font-weight: bold;
+                    color: #4a4a4a;
+                }
+                .currency {
+                    background-color: #e6e6fa;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    font-size: 0.9em;
+                }
+                .default-setting {
+                    font-weight: bold;
+                    color: #5653FE;
+                }
+            </style>
+
+            <div class="text-block">
+                "와! 블록체인으로 결제한다니, 정말 미래지향적이에요. 한번 써봐야겠어요."
+            </div>
+
+            <h3 class="section-title">💡 EQ Hub Pay 사용 꿀팁!</h3>
+
+            <div class="text-block">
+                EQ Hub Pay를 처음 사용하시나요? 걱정 마세요. 여기 몇 가지 유용한 팁을 준비했어요!
+            </div>
+
+            <ul>
+                <li>결제 전, 원하는 네트워크와 화폐를 선택할 수 있어요. 여러분의 선호에 맞게 골라보세요.</li>
+                <li>블록체인의 특성상 한 번 결제하면 취소가 어려워요. 결제 전 꼭 한 번 더 확인해주세요!</li>
+                <li>가상화폐 시세에 따라 결제 금액이 실시간으로 변동될 수 있어요. 예를 들어, 상품 가치가 $200일 때 20 USDT로 표시될 수 있답니다.</li>
+            </ul>
+
+            <div class="text-block">
+                "와! 블록체인 결제가 이렇게 간편할 줄 몰랐어요. 새로운 경험이 될 것 같아요!"
+            </div>
+
+            <h3 class="section-title">🔄 마음이 바뀌었다면?</h3>
+
+            <div class="text-block">
+                걱정 마세요! 언제든 다시 주문을 생성하여 원하는 결제 방식을 선택할 수 있어요. 여러분의 편의를 최우선으로 생각하는 멤블이니까요!
+            </div>
+
+            <div class="text-block">
+                멤블과 함께라면 결제도 특별한 경험이 됩니다. 여러분에게 가장 편리한 방식을 선택해 멤블의 다양한 서비스를 마음껏 즐겨보세요!
+            </div>
+
+            <div class="text-block">
+                "자, 이제 어떤 방식으로 결제해볼까요? 여러분의 특별한 순간을 위한 첫 걸음, 지금 시작해보세요! 💖✨"
+            </div>
+        </div>
+        
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        
+            const slider = document.querySelector('.image-container');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+        
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+        
+                slider.scrollTo({
+                    left: slides[index].offsetLeft,
+                    behavior: 'smooth'
+                });
+        
+                updateDots(index);
+                currentIndex = index;
+            }
+        
+            function updateDots(index) {
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+        
+            function currentSlide(index) {
+                showSlide(index);
+            }
+        
+            slider.addEventListener('scroll', () => {
+                const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                if (index !== currentIndex) {
+                    updateDots(index);
+                    currentIndex = index;
+                }
+            });
+        </script>
