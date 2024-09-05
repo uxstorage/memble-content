@@ -20,19 +20,14 @@
             overflow-wrap: break-word;
         }
         .wrapper {
-            padding: 0 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .container, .footer-content, .tab {
-            width: 100%; 
+            width: 100%;
             max-width: 1200px;
-            margin: 0;
+            margin: 0 auto;
+            padding: 0 20px;
             box-sizing: border-box;
         }
         .container {
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -45,6 +40,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-left: 0;
         }
         .page-links {
             display: flex;
@@ -95,10 +91,10 @@
         .footer-content {
             display: flex;
             align-items: flex-start;
-            padding: 0 20px;
             width: 100%;
             max-width: 1200px;
-            margin: 0;
+            margin: 0 auto;
+            padding: 0 20px;
             box-sizing: border-box;
         }
         .footer-logo {
@@ -124,21 +120,6 @@
             vertical-align: middle;
             margin-left: 5px;
         }
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 28px;
-            }
-            .page-link h2 {
-                font-size: 20px;
-            }
-            .page-link p {
-                font-size: 16px;
-            }
-            .page-link {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-        }
         .tab {
             overflow: hidden;
             border-bottom: none;
@@ -148,9 +129,6 @@
             flex-wrap: wrap;
             padding: 10px 0 5px 0;
             width: 100%;
-            max-width: 1200px; 
-            margin: 0; 
-            box-sizing: border-box;
         }
         .tab button {
             background-color: #ffffff;
@@ -269,125 +247,124 @@
             visibility: hidden;
             position: absolute;
         }
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .content {
-            flex: 1; /* 콘텐츠 영역이 남은 공간을 차지하도록 설정 */
-        }
-        footer {
-            background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
-            color: white;
-            padding: 40px 0;
-            margin-top: 40px;
-            flex-shrink: 0; /* 풋터가 줄어들지 않도록 설정 */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 28px;
+            }
+            .page-link h2 {
+                font-size: 20px;
+            }
+            .page-link p {
+                font-size: 16px;
+            }
+            .page-link {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="wrapper">
+    <div class="wrapper">
+        <div class="container">
             <h1 class="main-title">Memble Insider</h1>
             <div class="tab">
                 <div class="skeleton-tab"></div>
                 <div class="skeleton-tab"></div>
                 <div class="skeleton-tab"></div>
                 <button class="tablinks" onclick="openTab(event, 'rapbeat')">RAPBEAT</button>
-                <button class="tablinks" onclick="openTab(event, 'memble')"> 가이드북</button>
+                <button class="tablinks" onclick="openTab(event, 'memble')">가이드북</button>
             </div>
             <div id="rapbeat" class="tab-content">
-                <div class="container">
-                    <div class="page-links">
-                        <div class="page-link skeleton">
-                            <div class="skeleton-card">
-                                <div class="skeleton-thumbnail"></div>
-                                <div class="page-link-content">
-                                    <div class="skeleton-title"></div>
-                                    <div class="skeleton-description"></div>
-                                    <div class="skeleton-description"></div>
-                                </div>
+                <div class="page-links">
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
                             </div>
                         </div>
-                        <div class="page-link skeleton">
-                            <div class="skeleton-card">
-                                <div class="skeleton-thumbnail"></div>
-                                <div class="page-link-content">
-                                    <div class="skeleton-title"></div>
-                                    <div class="skeleton-description"></div>
-                                    <div class="skeleton-description"></div>
-                                </div>
+                    </div>
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
                             </div>
                         </div>
-                        <div class="page-link skeleton">
-                            <div class="skeleton-card">
-                                <div class="skeleton-thumbnail"></div>
-                                <div class="page-link-content">
-                                    <div class="skeleton-title"></div>
-                                    <div class="skeleton-description"></div>
-                                    <div class="skeleton-description"></div>
-                                </div>
+                    </div>
+                    <div class="page-link skeleton">
+                        <div class="skeleton-card">
+                            <div class="skeleton-thumbnail"></div>
+                            <div class="page-link-content">
+                                <div class="skeleton-title"></div>
+                                <div class="skeleton-description"></div>
+                                <div class="skeleton-description"></div>
                             </div>
                         </div>
-                        <div class="page-link actual-content" style="display: none;">
-                            <a href="rapbeat-content/03_rapbeat_timetable.html" class="page-link">
-                                <img src="rapbeat-content/image/timetable1.jpeg" alt="타임테이블 썸네일" class="page-link-thumbnail">
-                                <div class="page-link-content">
-                                    <h2>타임테이블 공개</h2>
-                                    <p>힙합의 리듬에 맞춰 당신의 일정을 조율하세요! 🎵⏰</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="page-link actual-content" style="display: none;">
-                            <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
-                                <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
-                                <div class="page-link-content">
-                                    <h2>관람 유의사항</h2>
-                                    <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="page-link actual-content" style="display: none;">
-                            <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
-                                <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
-                                <div class="page-link-content">
-                                    <h2>프리스타일 배틀 이벤트</h2>
-                                    <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="page-link actual-content" style="display: none;">
-                            <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
-                                <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
-                                <div class="page-link-content">
-                                    <h2>셔틀버스 정보</h2>
-                                    <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
-                                </div>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/03_rapbeat_timetable.html" class="page-link">
+                            <img src="rapbeat-content/image/timetable1.jpeg" alt="타임테이블 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>타임테이블 공개</h2>
+                                <p>힙합의 리듬에 맞춰 당신의 일정을 조율하세요! 🎵⏰</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/02_rapbeat-visitor-rules.html" class="page-link">
+                            <img src="rapbeat-content/image/rule.png" alt="관람 유의사항 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>관람 유의사항</h2>
+                                <p>RAPBEAT 2024 페스티벌 관람 시 주의사항 안내</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/01_freestyle_battle_event.html" class="page-link">
+                            <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>프리스타일 배틀 이벤트</h2>
+                                <p>RAPBEAT 2024 x Street Rap Shit 프리스타일 랩배틀 정보</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="page-link actual-content" style="display: none;">
+                        <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link">
+                            <img src="rapbeat-content/image/bus1.png" alt="셔틀버스 썸네일" class="page-link-thumbnail">
+                            <div class="page-link-content">
+                                <h2>셔틀버스 정보</h2>
+                                <p>RAPBEAT 2024 셔틀버스 노선 및 예매 방법 안내</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div id="memble" class="tab-content">
-                <div class="container">
-                    <div class="page-links">
-                        <a href="introduce-memble/02_shop_buy.html" class="page-link">
-                            <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
-                            <div class="page-link-content">
-                                <h2>EP. 2 샵 둘러보고 멤버십 구매하기!</h2>
-                                <p>Memble 샵 이용 방법과 멤버십 구매 과정을 안내해드립니다.</p>
-                            </div>
-                        </a>
-                        <a href="introduce-memble/01_event_membership.html" class="page-link">
-                            <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
-                            <div class="page-link-content">
-                                <h2>EP. 1 이벤트와 멤버십이 뭐에요?</h2>
-                                <p>Memble의 이벤트와 멤버십 시스템에 대해 알아보세요!</p>
-                            </div>
-                        </a>
-                    </div>
+                <div class="page-links">
+                    <a href="introduce-memble/02_shop_buy.html" class="page-link">
+                        <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
+                        <div class="page-link-content">
+                            <h2>EP. 2 샵 둘러보고 멤버십 구매하기!</h2>
+                            <p>Memble 샵 이용 방법과 멤버십 구매 과정을 안내해드립니다.</p>
+                        </div>
+                    </a>
+                    <a href="introduce-memble/01_event_membership.html" class="page-link">
+                        <img src="introduce-memble/image/insta.png" alt="관람 의사항 썸네일" class="page-link-thumbnail">
+                        <div class="page-link-content">
+                            <h2>EP. 1 이벤트와 멤버십이 뭐에요?</h2>
+                            <p>Memble의 이벤트와 멤버십 시스템에 대해 알아보세요!</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -396,7 +373,7 @@
         <div class="footer-content">
             <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
             <div class="footer-text">
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a></p>
             </div>
         </div>
     </footer>
