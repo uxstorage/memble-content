@@ -13,14 +13,27 @@
             color: #333;
             background-color: #f8f9fa;
         }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+        .content {
+            flex: 1;
+            width: 100%;
+            max-width: 480px;
+        }
         .container {
-            width: 88%;
-            max-width: 1200px;
+            width: 100%;
+            max-width: 480px;
             margin: 0 auto;
-            padding: 64px 16px;
+            padding: 32px 16px;
         }
         .hero-container {
             width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
             overflow: hidden;
         }
         .hero-image {
@@ -74,11 +87,15 @@
             margin-bottom: 16px;
         }
         footer {
+            width: 100%;
+            max-width: 480px;
+            padding: 64px 0;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
-            padding: 64px 0;
         }
         .footer-content {
+            max-width: 480px;
+            margin: 0 auto;
             display: flex;
             align-items: flex-start;
             padding: 0 16px;
@@ -107,26 +124,19 @@
             margin-left: 8px;
         }
         .image-container {
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-            overflow-x: auto;
+            width: 100%;
+            overflow-x: hidden;
             white-space: nowrap;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .image-container::-webkit-scrollbar {
-            display: none;
         }
         .slide {
-            display: inline-block;
             width: 100%;
-            scroll-snap-align: start;
+            display: inline-block;
+            vertical-align: top;
         }
         .slide img {
             width: 100%;
             height: auto;
+            object-fit: cover;
         }
         .dot-indicators {
             text-align: center;
@@ -145,106 +155,135 @@
             background-color: #5653FE;
         }
 
+        @media (max-width: 480px) {
+            .wrapper {
+                align-items: stretch;
+            }
+
+            footer {
+                width: 100%;
+            }
+        }
+
         @media (min-width: 768px) {
+            .container,
+            .hero-container,
+            .footer-content {
+                max-width: 480px;
+            }
             .image-container {
                 display: flex;
-                justify-content: space-between;
-                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: center;
             }
             .slide {
-                width: 48%;
+                width: 100%;
+                margin-bottom: 16px;
             }
             .dot-indicators {
                 display: none;
             }
         }
+
+        @media (min-width: 1200px) {
+            .hero-container, 
+            .container, 
+            footer,
+            .footer-content {
+                max-width: 480px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="hero-container">
-        <img src="image/membership_intro_thumbnai.png" alt="Memble 히어로 이미지" class="hero-image">
+    <div class="wrapper">
+        <div class="content">
+            <div class="hero-container">
+                <img src="image/membership_intro_thumbnai.png" alt="Memble 히어로 이미지" class="hero-image">
+            </div>
+            
+            <div class="container">
+                <h1 class="main-title">🎉 이벤트와 멤버십이 뭐에요?</h1>
+                
+                <div class="text-block">멤블에 오신 것을 환영합니다! 이벤트와 멤버십의 세계로 여러분을 초대합니다. 이벤트는 여러분에게 특별한 경험을, 멤버십은 독특한 혜택을 제공합니다. 멤블과 함께 일상에 색다른 즐거움을 더해보세요. 여러분만의 특별한 순간이 여기서 시작됩니다.</div>
+                
+                <h2 class="section-title">🎵 이벤트의 세계로 빠져보세요</h2>
+
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="image/home_event.jpg" alt="Memble 이벤트 1">
+                    </div>
+                </div>
+                
+                <div class="text-block">
+                    Memble의 메인 화면은 여러분을 다양한 이벤트의 세계로 초대합니다. 각 이벤트의 이름, 날짜, 장소 등 핵심 정보를 한눈에 볼 수 있어, 마치 여행 가이드북을 펼쳐본 듯한 느낌이 듭니다.
+
+                    손가락 하나로 슬라이드하며 구경하는 재미는 마치 온라인 쇼핑몰을 둘러보는 듯한 즐거움을 줍니다. 다양한 페스티벌부터 독특한 문화 행사까지, 다채로운 이벤트들이 여러분의 선택을 기다리고 있습니다.
+
+                    관심 있는 이벤트를 발견하셨나요? 자주 확인해보세요. 인기 있는 이벤트의 티켓은 순식간에 매진될 수 있으니, 티켓 오픈일을 놓치지 않는 것이 중요합니다!
+                </div>
+
+                <h2 class="section-title">💎 나만의 특별한 멤버십</h2>
+                
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="image/my_qr.png" alt="Memble 이벤트 1">
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    Memble의 멤버십은 특별한 혜택을 제공합니다. QR코드로 빠르게 입장할 수 있어, 대기 시간을 줄이고 더 많은 즐거움을 누릴 수 있습니다.
+
+                    멤버십 등급에 따라 다양한 특전이 준비되어 있습니다. 어떤 혜택이 있는지 직접 확인해보세요. 멤버십 카드를 눌러보면 숨겨진 정보나 특별 옵션을 발견할 수도 있습니다.
+                </div>
+
+                <h2 class="section-title">🎁 새로운 경험의 문을 열어보세요</h2>
+
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="image/shop.png" alt="Memble 이벤트 1">
+                    </div>
+                </div>
+                
+                <div class="text-block">
+                    Memble에서 다양한 새로운 경험을 만나보세요. 인기 있는 멤버십은 빠르게 매진될 수 있으니 서두르세요. 
+
+                    선물 받은 코드가 있다면 쉽고 빠르게 등록하고 특별한 혜택을 누려보세요. 또한, 시시각각 변하는 특별 프로모션도 놓치지 마세요. 깜짝 할인이나 추가 혜택의 기회가 있을 수 있습니다.
+
+                    프로필 설정에서 관심사를 등록해두면, 당신의 취향에 맞는 이벤트를 추천받을 수 있습니다. 이것이 Memble만의 특별한 기능입니다.
+                </div>
+                
+                <h2 class="section-title">💡 Memble 200% 활용하기</h2>
+                
+                <div class="text-block">
+                    Memble을 더욱 즐겁게 사용하는 방법을 알려드릴게요. 멤버십 구매 전에는 혜택 내용을 꼼꼼히 확인해보세요. 때로는 숨겨진 보석 같은 혜택을 발견할 수 있답니다.
+
+                    이벤트 당일, QR코드를 미리 준비해두세요. 스마트폰 밝기를 최대로 해두면 더 빠르게 인식된다는 사실, 알고 계셨나요? 친구와 함께 간다면 멤버십 공유 기능을 활용해보세요. 함께 할 때 즐거움은 배가 됩니다.
+
+                    이벤트가 끝난 후에는 후기를 남겨보는 것은 어떨까요? 다음 이벤트 선택에 도움이 될 뿐만 아니라, 때로는 특별한 리워드가 기다리고 있을지도 모릅니다!
+                </div>
+
+                <div class="text-block">
+                    Memble과 함께라면 모든 순간이 특별해집니다. 여러분만의 잊지 못할 추억을 만들어보세요. 특별한 경험이 바로 여기, Memble에서 여러분을 기다리고 있습니다! 
+
+                    자, 이제 여러분의 Memble 여정을 시작해볼까요? 어떤 놀라운 일들이 기다리고 있을지 정말 기대되지 않나요? Memble과 함께 특별한 순간을 만들어갈 준비, 되셨나요? 😉
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
+                <div class="footer-text">
+                    <p>
+                        <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                        </a>
+                    </p>
+                    <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                </div>
+            </div>
+        </footer>
     </div>
-    
-    <div class="container">
-        <h1 class="main-title">🎉 이벤트와 멤버십이 뭐에요?</h1>
-        
-        <div class="text-block">멤블에 오신 것을 환영합니다! 이벤트와 멤버십의 세계로 여러분을 초대합니다. 이벤트는 여러분에게 특별한 경험을, 멤버십은 독특한 혜택을 제공합니다. 멤블과 함께 일상에 색다른 즐거움을 더해보세요. 여러분만의 특별한 순간이 여기서 시작됩니다.</div>
-        
-        <h2 class="section-title">🎵 이벤트의 세계로 빠져보세요</h2>
-
-        <div class="image-container">
-            <div class="slide">
-                <img src="image/home_event.jpg" alt="Memble 이벤트 1">
-            </div>
-        </div>
-        
-        <div class="text-block">
-            Memble의 메인 화면은 여러분을 다양한 이벤트의 세계로 초대합니다. 각 이벤트의 이름, 날짜, 장소 등 핵심 정보를 한눈에 볼 수 있어, 마치 여행 가이드북을 펼쳐본 듯한 느낌이 듭니다.
-
-            손가락 하나로 슬라이드하며 구경하는 재미는 마치 온라인 쇼핑몰을 둘러보는 듯한 즐거움을 줍니다. 다양한 페스티벌부터 독특한 문화 행사까지, 다채로운 이벤트들이 여러분의 선택을 기다리고 있습니다.
-
-            관심 있는 이벤트를 발견하셨나요? 자주 확인해보세요. 인기 있는 이벤트의 티켓은 순식간에 매진될 수 있으니, 티켓 오픈일을 놓치지 않는 것이 중요합니다!
-        </div>
-
-        <h2 class="section-title">💎 나만의 특별한 멤버십</h2>
-        
-        <div class="image-container">
-            <div class="slide">
-                <img src="image/my_qr.png" alt="Memble 이벤트 1">
-            </div>
-        </div>
-
-        <div class="text-block">
-            Memble의 멤버십은 특별한 혜택을 제공합니다. QR코드로 빠르게 입장할 수 있어, 대기 시간을 줄이고 더 많은 즐거움을 누릴 수 있습니다.
-
-            멤버십 등급에 따라 다양한 특전이 준비되어 있습니다. 어떤 혜택이 있는지 직접 확인해보세요. 멤버십 카드를 눌러보면 숨겨진 정보나 특별 옵션을 발견할 수도 있습니다.
-        </div>
-
-        <h2 class="section-title">🎁 새로운 경험의 문을 열어보세요</h2>
-
-        <div class="image-container">
-            <div class="slide">
-                <img src="image/shop.png" alt="Memble 이벤트 1">
-            </div>
-        </div>
-        
-        <div class="text-block">
-            Memble에서 다양한 새로운 경험을 만나보세요. 인기 있는 멤버십은 빠르게 매진될 수 있으니 서두르세요. 
-
-            선물 받은 코드가 있다면 쉽고 빠르게 등록하고 특별한 혜택을 누려보세요. 또한, 시시각각 변하는 특별 프로모션도 놓치지 마세요. 깜짝 할인이나 추가 혜택의 기회가 있을 수 있습니다.
-
-            프로필 설정에서 관심사를 등록해두면, 당신의 취향에 맞는 이벤트를 추천받을 수 있습니다. 이것이 Memble만의 특별한 기능입니다.
-        </div>
-        
-        <h2 class="section-title">💡 Memble 200% 활용하기</h2>
-        
-        <div class="text-block">
-            Memble을 더욱 즐겁게 사용하는 방법을 알려드릴게요. 멤버십 구매 전에는 혜택 내용을 꼼꼼히 확인해보세요. 때로는 숨겨진 보석 같은 혜택을 발견할 수 있답니다.
-
-            이벤트 당일, QR코드를 미리 준비해두세요. 스마트폰 밝기를 최대로 해두면 더 빠르게 인식된다는 사실, 알고 계셨나요? 친구와 함께 간다면 멤버십 공유 기능을 활용해보세요. 함께 할 때 즐거움은 배가 됩니다.
-
-            이벤트가 끝난 후에는 후기를 남겨보는 것은 어떨까요? 다음 이벤트 선택에 도움이 될 뿐만 아니라, 때로는 특별한 리워드가 기다리고 있을지도 모릅니다!
-        </div>
-
-        <div class="text-block">
-            Memble과 함께라면 모든 순간이 특별해집니다. 여러분만의 잊지 못할 추억을 만들어보세요. 특별한 경험이 바로 여기, Memble에서 여러분을 기다리고 있습니다! 
-
-            자, 이제 여러분의 Memble 여정을 시작해볼까요? 어떤 놀라운 일들이 기다리고 있을지 정말 기대되지 않나요? Memble과 함께 특별한 순간을 만들어갈 준비, 되셨나요? 😉
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
-            <div class="footer-text">
-                <p>
-                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
-                    </a>
-                </p>
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
-            </div>
-        </div>
-    </footer>
     <script>
         function initializeSliders() {
             const sliders = document.querySelectorAll('.image-container');
