@@ -69,75 +69,57 @@
             margin-top: 16px;
             font-weight: 700;
         }
-        .slider-container {
+        .image-container {
             width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 32px;
+            margin-left: calc(50% - 50vw);
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .image-container::-webkit-scrollbar {
+            display: none;
         }
         .slide {
-            min-width: 100%;
-            box-sizing: border-box;
+            display: inline-block;
+            width: 100%;
+            scroll-snap-align: start;
         }
         .slide img {
             width: 100%;
             height: auto;
-            object-fit: cover;
         }
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.5);
-            color: rgba(0, 0, 0, 0.7);
-            border: none;
-            width: 40px;
-            height: 40px;
+        .dot-indicators {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 8px;
             cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.7;
         }
-        .slider-container:hover .slider-button {
-            opacity: 1;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-        .slider-button:hover {
-            background-color: rgba(255, 255, 255, 1);
-            color: rgba(0, 0, 0, 1);
-        }
-        .slider-button.prev {
-            left: 20px;
-        }
-        .slider-button.next {
-            right: 20px;
-        }
-        .pagination {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        .pagination-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-        }
-        .pagination-dot.active {
+        .dot.active {
             background-color: #5653FE;
+        }
+
+        @media (min-width: 768px) {
+            .image-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+            .slide {
+                width: 48%;
+            }
+            .dot-indicators {
+                display: none;
+            }
         }
         footer {
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
@@ -186,21 +168,21 @@
         </div>
 
         <h3 class="section-title">📝 멤버십 등록하기</h3>
-        <div class="slider-container">
-            <div class="slider" id="registerSlider">
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면1" alt="멤버십 등록 화면1">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면2" alt="멤버십 등록 화면2">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면3" alt="멤버십 등록 화면3">
-                </div>
+        <div class="image-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면1" alt="멤버십 등록 화면1">
             </div>
-            <button class="slider-button prev" onclick="moveSlider('registerSlider', -1)">&#10094;</button>
-            <button class="slider-button next" onclick="moveSlider('registerSlider', 1)">&#10095;</button>
-            <div class="pagination" id="registerPagination"></div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면2" alt="멤버십 등록 화면2">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=멤버십+등록+화면3" alt="멤버십 등록 화면3">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
 
         <div class="text-block">
@@ -216,21 +198,21 @@
         </div>
 
         <h3 class="section-title">🎫 멤버십 사용하기</h3>
-        <div class="slider-container">
-            <div class="slider" id="useSlider">
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=멤버십+사용+화면1" alt="멤버십 사용 화면1">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=멤버십+사용+화면2" alt="멤버십 사용 화면2">
-                </div>
-                <div class="slide">
-                    <img src="https://via.placeholder.com/1200x600.png?text=QR+코드+화면" alt="QR 코드 화면">
-                </div>
+        <div class="image-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=멤버십+사용+화면1" alt="멤버십 사용 화면1">
             </div>
-            <button class="slider-button prev" onclick="moveSlider('useSlider', -1)">&#10094;</button>
-            <button class="slider-button next" onclick="moveSlider('useSlider', 1)">&#10095;</button>
-            <div class="pagination" id="usePagination"></div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=멤버십+사용+화면2" alt="멤버십 사용 화면2">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x600.png?text=QR+코드+화면" alt="QR 코드 화면">
+            </div>
+        </div>
+        <div class="dot-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
 
         <div class="text-block">
@@ -259,75 +241,48 @@
     </footer>
 
     <script>
-        let currentIndex = { 'registerSlider': 0, 'useSlider': 0 };
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function handleTouchStart(event) {
-            touchStartX = event.touches[0].clientX;
-        }
-
-        function handleTouchMove(event) {
-            touchEndX = event.touches[0].clientX;
-        }
-
-        function handleTouchEnd(slider) {
-            const sliderId = slider.id;
-            if (touchStartX - touchEndX > 50) {
-                moveSlider(sliderId, 1);
-            } else if (touchEndX - touchStartX > 50) {
-                moveSlider(sliderId, -1);
-            }
-            touchStartX = 0;
-            touchEndX = 0;
-        }
-
-        window.onload = function() {
-            initializePagination('registerSlider');
-            initializePagination('useSlider');
-
-            const sliders = document.querySelectorAll('.slider');
-            sliders.forEach(slider => {
-                slider.addEventListener('touchstart', handleTouchStart, { passive: true });
-                slider.addEventListener('touchmove', handleTouchMove, { passive: true });
-                slider.addEventListener('touchend', () => handleTouchEnd(slider), { passive: true });
-            });
-        };
-
-        function moveSlider(sliderId, direction) {
-            const slider = document.getElementById(sliderId);
-            const slides = slider.getElementsByClassName('slide');
-            currentIndex[sliderId] = (currentIndex[sliderId] + direction + slides.length) % slides.length;
-            updateSlider(sliderId);
-            updatePagination(sliderId);
-        }
-
-        function updateSlider(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const slideWidth = slider.clientWidth;
-            slider.style.transform = `translateX(-${currentIndex[sliderId] * slideWidth}px)`;
-        }
-
-        function updatePagination(sliderId) {
-            const pagination = document.getElementById(sliderId === 'registerSlider' ? 'registerPagination' : 'usePagination');
-            const dots = pagination.querySelectorAll('.pagination-dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex[sliderId]);
-            });
-        }
-
-        function initializePagination(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const slides = slider.querySelectorAll('.slide');
-            const pagination = document.getElementById(sliderId === 'registerSlider' ? 'registerPagination' : 'usePagination');
+        function initializeSliders() {
+            const sliders = document.querySelectorAll('.image-container');
             
-            slides.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('pagination-dot');
-                if (index === 0) dot.classList.add('active');
-                pagination.appendChild(dot);
+            sliders.forEach((slider, sliderIndex) => {
+                const slides = slider.querySelectorAll('.slide');
+                const dots = slider.nextElementSibling.querySelectorAll('.dot');
+                let currentIndex = 0;
+
+                function showSlide(index) {
+                    if (index < 0) index = slides.length - 1;
+                    if (index >= slides.length) index = 0;
+
+                    slider.scrollTo({
+                        left: slides[index].offsetLeft,
+                        behavior: 'smooth'
+                    });
+
+                    updateDots(index);
+                    currentIndex = index;
+                }
+
+                function updateDots(index) {
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+
+                slider.addEventListener('scroll', () => {
+                    const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                    if (index !== currentIndex) {
+                        updateDots(index);
+                        currentIndex = index;
+                    }
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => showSlide(index));
+                });
             });
         }
+
+        document.addEventListener('DOMContentLoaded', initializeSliders);
     </script>
 </body>
 </html>
