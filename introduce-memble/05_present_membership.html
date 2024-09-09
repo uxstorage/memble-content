@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memble - 멤버십 선물하기 및 등록 가이드</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            word-break:keep-all;
+        }
+        .container {
+            width: 88%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 16px;
+        }
+        .hero-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .main-title {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #5653FE;
+            text-align: start;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            color: #5653FE;
+        }
+        .text-block {
+            font-size: 18px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .emphasis {
+            font-weight: 700;
+            color: #5653FE;
+        }
+        .step {
+            background-color: #f0f0f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .step-title {
+            font-weight: 700;
+            color: #5653FE;
+            margin-bottom: 8px;
+        }
+        .tip {
+            background-color: #f0f4ff;
+            border-left: 4px solid #5653FE;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 0.95em;
+            color: #333;
+        }
+        .tip p {
+            margin: 0;
+        }
+        .slider-container {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 32px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            color: rgba(0, 0, 0, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+        .slider-container:hover .slider-button {
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .slider-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+            color: rgba(0, 0, 0, 1);
+        }
+        .slider-button.prev {
+            left: 20px;
+        }
+        .slider-button.next {
+            right: 20px;
+        }
+        .pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .pagination-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .pagination-dot.active {
+            background-color: #5653FE;
+        }
+        footer {
+            background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
+            color: white;
+            padding: 64px 0;
+            margin-top: 64px; /* footer와 콘텐츠 사이의 간격 유지 */
+            width: 100%; /* 전체 너비로 설정 */
+        }
+        .footer-content {
+            display: flex;
+            align-items: flex-start;
+            padding: 0 16px;
+            max-width: 1200px; /* 컨테이너와 동일한 최대 너비 설정 */
+            margin: 0 auto; /* 중앙 정렬 */
+        }
+        .footer-logo {
+            width: 128px;
+            margin-right: 32px;
+        }
+        .footer-text {
+            flex: 1;
+        }
+        .footer-text p {
+            margin: 8px 0;
+        }
+        footer a, 
+        footer a:visited, 
+        footer a:hover, 
+        footer a:active {
+            color: white;
+            text-decoration: none;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        .highlight {
+            color: #5653FE;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <img src="https://via.placeholder.com/1200x400.png?text=Memble+멤버십+선물하기+가이드" alt="Memble 멤버십 선물하기 가이드" class="hero-image">
+    </div>
+    
+    <div class="container">
+        <h1 class="main-title">멤버십 선물하기 및 등록 가이드</h1>
+        
+        <h2 class="section-title"><span class="emoji">🎁</span> 미등록 멤버십 선물하기</h2>
+        
+        <div class="slider-container">
+            <div class="slider" id="giftSlider">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면1" alt="미등록 멤버십 선물하기 화면1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면2" alt="미등록 멤버십 선물하기 화면2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면3" alt="미등록 멤버십 선물하기 화면3">
+                </div>
+            </div>
+            <button class="slider-button prev" onclick="moveSlider('giftSlider', -1)">&#10094;</button>
+            <button class="slider-button next" onclick="moveSlider('giftSlider', 1)">&#10095;</button>
+            <div class="pagination" id="giftPagination"></div>
+        </div>
+
+        <div class="text-block">
+            <p>안녕하세요, 멤블러 여러분! 오늘은 미등록 멤버십을 선물하는 방법에 대해 알아볼게요. 먼저 <span class="highlight">미등록 탭</span>에서 원하는 멤버십 카드를 선택해주세요. 그러면 '등록하기', '선물하기', '양도하기' 세 가지 옵션이 나타날 텐데요, 여기서 <span class="highlight">'선물하기' 버튼</span>을 눌러주세요.</p>
+
+            <p>그 다음, 화면 하단에 있는 <span class="highlight">'받는사람 추가' 버튼</span>을 클릭하세요. 이제 선물을 받을 분의 이메일 주소를 입력할 차례입니다. 주의할 점은 반드시 <span class="highlight">멤블과 연동된 이메일 주소</span>여야 한다는 거예요. 그리고 멤버십에 포함된 아이템 중에서 <span class="highlight">선물 가능한 아이템</span>을 선택하면 됩니다.</p>
+
+            <p>여러 명에게 동시에 선물하고 싶으신가요? 걱정 마세요! 이메일 주소를 여러 번 입력하면 한 번에 여러 명에게 선물할 수 있답니다.</p>
+        </div>
+        
+        <div class="tip">
+            <p><span class="emoji">💡</span> 선물을 보낸 후, 받는 분에게 이메일로 선물 코드가 발송된다는 점을 꼭 알려주세요. 놓치지 않도록 확인해달라고 당부해주세요!</p>
+        </div>
+
+        <h2 class="section-title"><span class="emoji">🎊</span> 선물받은 코드 등록하기</h2>
+
+        <div class="slider-container">
+            <div class="slider" id="registerSlider">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면1" alt="선물받은 코드 등록하기 화면1">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면2" alt="선물받은 코드 등록하기 화면2">
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면3" alt="선물받은 코드 등록하기 화면3">
+                </div>
+            </div>
+            <button class="slider-button prev" onclick="moveSlider('registerSlider', -1)">&#10094;</button>
+            <button class="slider-button next" onclick="moveSlider('registerSlider', 1)">&#10095;</button>
+            <div class="pagination" id="registerPagination"></div>
+        </div>
+
+        <div class="text-block">
+            <p>이제 선물받은 코드를 등록하는 방법을 알아볼까요? 먼저, 이메일에서 받은 <span class="highlight">선물 코드</span>를 복사해주세요. 그리고 멤블 앱을 열어 이벤트 배너 바로 아래에 있는 "<span class="highlight">선물받은 멤버십이 있나요?</span>" 배너를 찾아 클릭해주세요.</p>
+
+            <p>여기에 아까 복사해둔 코드를 붙여넣기만 하면 끝이에요! 정말 간단하죠? 등록이 완료되면 <span class="highlight">My membership</span>의 <span class="highlight">미등록 탭</span>에서 새롭게 등록된 멤버십을 확인할 수 있어요.</p>
+        </div>
+
+        <h3 class="section-title"><span class="emoji">🌟</span> 멤블과 함께하는 특별한 순간!</h3>
+        <div class="text-block">
+            <p>멤버십을 친구들과 함께 공유하면 더욱 즐거운 추억을 만들 수 있어요. 소중한 사람에게 깜짝 선물로 멤버십을 전하는 건 어떨까요? 특별한 날을 더욱 특별하게 만들 수 있을 거예요.</p>
+        </div>
+        
+        <div class="tip">
+            <p><span class="emoji">💡</span> 멤블과 함께 즐거운 멤버십 라이프를 즐겨보세요!</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
+            <div class="footer-text">
+                <p>
+                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                    </a>
+                </p>
+                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentIndex = { 'giftSlider': 0, 'registerSlider': 0 };
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function handleTouchStart(event) {
+            touchStartX = event.touches[0].clientX;
+        }
+
+        function handleTouchMove(event) {
+            touchEndX = event.touches[0].clientX;
+        }
+
+        function handleTouchEnd(slider) {
+            const sliderId = slider.id;
+            if (touchStartX - touchEndX > 50) {
+                moveSlider(sliderId, 1);
+            } else if (touchEndX - touchStartX > 50) {
+                moveSlider(sliderId, -1);
+            }
+            touchStartX = 0;
+            touchEndX = 0;
+        }
+
+        window.onload = function() {
+            initializePagination('giftSlider');
+            initializePagination('registerSlider');
+
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+                slider.addEventListener('touchmove', handleTouchMove, { passive: true });
+                slider.addEventListener('touchend', () => handleTouchEnd(slider), { passive: true });
+            });
+        };
+
+        function moveSlider(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const slides = slider.getElementsByClassName('slide');
+            currentIndex[sliderId] = (currentIndex[sliderId] + direction + slides.length) % slides.length;
+            updateSlider(sliderId);
+            updatePagination(sliderId);
+        }
+
+        function updateSlider(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const slideWidth = slider.clientWidth;
+            slider.style.transform = `translateX(-${currentIndex[sliderId] * slideWidth}px)`;
+        }
+
+        function updatePagination(sliderId) {
+            const pagination = document.getElementById(`${sliderId === 'giftSlider' ? 'gift' : 'register'}Pagination`);
+            const dots = pagination.querySelectorAll('.pagination-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex[sliderId]);
+            });
+        }
+
+        function initializePagination(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const slides = slider.querySelectorAll('.slide');
+            const pagination = document.getElementById(`${sliderId === 'giftSlider' ? 'gift' : 'register'}Pagination`);
+            
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('pagination-dot');
+                if (index === 0) dot.classList.add('active');
+                pagination.appendChild(dot);
+            });
+        }
+    </script>
+</body>
+</html>
