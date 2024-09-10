@@ -20,11 +20,19 @@
             word-break: keep-all;
             overflow-wrap: break-word;
         }
+        .wrapper {
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
         .container, .footer-content {
             width: 100%;
-            max-width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+            max-width: 768px;
+            padding-left: 16px;
+            padding-right: 16px;
             box-sizing: border-box;
             margin: 0 auto;
         }
@@ -44,8 +52,8 @@
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
             padding: 40px 0;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
+            width: 100%;
+            margin-left: 0;
             box-sizing: border-box;
         }
         .footer-content {
@@ -228,92 +236,96 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="main-title">𝑀𝑈𝐿𝑇𝐼-𝐺𝐸𝑁𝑅𝐸 𝑀𝑈𝑆𝐼𝐶 𝐹𝐸𝑆𝑇𝐼𝑉𝐴𝐿, 𝑅𝐴𝑃𝐵𝐸𝐴𝑇 𝗧𝗜𝗠𝗘𝗧𝗔𝗛𝗟𝗘 🔥</h1>
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="main-title">𝑀𝑈𝐿𝑇𝐼-𝐺𝐸𝑁𝑅𝐸 𝑀𝑈𝑆𝐼𝐶 𝐹𝐸𝑆𝑇𝐼𝑉𝐴𝐿, 𝑅𝐴𝑃𝐵𝐸𝐴𝑇 𝗧𝗜𝗠𝗘𝗧𝗔𝗛𝗟𝗘 🔥</h1>
 
-        <div class="text-block" style="margin-bottom: 4px;">많은 분들이 기다려주신 RAPBEAT 2024의 타임테이블을 공개합니다!</div>
+            <div class="text-block" style="margin-bottom: 4px;">많은 분들이 기다려주신 RAPBEAT 2024의 타임테이블을 공개합니다!</div>
 
-        <div class="text-block" style="margin-bottom: 4px;">멀티 스테이지로 운영되는 RAPBEAT는 각 스테이지를 자유롭게 이동하며 관람이 가능합니다!</div>
+            <div class="text-block" style="margin-bottom: 4px;">멀티 스테이지로 운영되는 RAPBEAT는 각 스테이지를 자유롭게 이동하며 관람이 가능합니다!</div>
 
-        <div class="text-block" style="margin-bottom: 4px;">아티스트별 공연 시간 및 스테이지가 상이하오니 미리 확인해 주세요 ✔️</div>
+            <div class="text-block" style="margin-bottom: 4px;">아티스트별 공연 시간 및 스테이지가 상이하오니 미리 확인해 주세요 ✔️</div>
 
-        <div class="text-block" style="margin-bottom: 4px;">RAPBEAT와 함께 뜨거운 9월을 만들어보아요! ❤️‍🔥</div>
+            <div class="text-block" style="margin-bottom: 4px;">RAPBEAT와 함께 뜨거운 9월을 만들어보아요! ❤️‍🔥</div>
 
-        <div class="section-title">RAPBEAT 2024 타임테이블</div>
+            <div class="section-title">RAPBEAT 2024 타임테이블</div>
 
-        <div class="image-container">
-            <div class="slide">
-                <img src="image/timetable1.jpeg" alt="버스 안내 이미지 1">
+            <div class="image-container">
+                <div class="slide">
+                    <img src="image/timetable1.jpeg" alt="버스 안내 이미지 1">
+                </div>
+                <div class="slide">
+                    <img src="image/timetable2.jpeg" alt="버스 내 이미지 2">
+                </div>
             </div>
-            <div class="slide">
-                <img src="image/timetable2.jpeg" alt="버스 내 이미지 2">
+            <div class="dot-indicators">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
             </div>
-        </div>
-        <div class="dot-indicators">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-        </div>
 
-        <div class="lineup-info">
-            <div class="event-title">💫 𝗥𝗔𝗣𝗘𝗔𝗧 𝟮𝟬𝟮𝟰 💫</div>
-            <div class="event-title">DATE</div>
-            <div class="event-details">9/21 (SAT) ~ 9/22 (SUN)</div>
-            <div class="event-title">VENUE</div>
-            <div class="event-details">송도달빛축제공원</div>
-            <div class="event-title">LINE UP</div>
-            <div class="event-details">▫ 9/21(SAT) : 박재범, CHANGMO, NELL, 엄정화, 장기하, KISS OF LIFE, ASH ISLAND, B.I, LILBOI, TABBER, PAUL BLANCO, DASUTT, CAMO, 빛과 소금, 수퍼비, UNEDUCATED KID, 호미들, 한로로, BLOO, YOUNG POSSE, VANNER, REDDY, FLEEKY BANG, POLODARED, CHURRY, LEO, TRAY B, BOBBLEHEAD MUSIC, WORLD FAME US, KIDS ELECTRIC ORCHESTRA, DNOPF, BILL.E, HOLISHIP, EL CAPITXN</div>
-            <div class="event-details">▫ 9/22(SUN) : Nas, E SENS, SWINGS, BEWHY, LUCY, 기리보이, C JAMM, 가리온, JUSTHIS, KID MILLI, 체리필터, 양홍원, 한요한, NO:EL, RAD MUSEUM, JVCKI WAI, MISO, 거니, EK, FLOWSIK, KATIE, HYPNOSIS THERAPY, JUTO, DOBERMAN, YUNGIN, SEJIN, PULLUPBOI</div>
-        </div>
-
-        <div class="highlight">
-            <h3>RAPBEAT 2024 하이라이트</h3>
-            <p>올해 RAPBEAT는 더욱 다채로운 라인업과 함께 여러분을 기다립니다. 국내외 유명 아티스트들의 공연은 물론, 다양한 장르의 음악을 한자리에서 즐길 수 있는 특별한 기회입니다. 송도달빛축제공원에서 펼쳐지는 이번 축제는 음악과 자연, 그리고 도시의 아름다움이 어우러진 환상적인 경험을 선사할 것입니다.</p>
-        </div>
-
-        <div class="text-block">
-            <h3>페스티벌 즐기기 팁</h3>
-            <ul>
-                <li>편안한 신발과 옷차림을 준비해주세요. 긴 시간 동안 서 있거나 춤을 추게 될 거예요!</li>
-                <li>물과 간식을 챙겨오세요. 수분 보충은 필수입니다.</li>
-                <li>친구들과 함께 오면 더욱 즐거운 시간을 보낼 수 있어요.</li>
-                <li>좋아하는 아티스트의 공연 시간을 미리 체크하고 일정을 계획해보세요.</li>
-                <li>새로운 아티스트의 무대도 놓치지 마세요. 새로운 음악을 발견하는 즐거움을 느껴보세요!</li>
-            </ul>
-        </div>
-
-        <div class="text-block">
-            <h3>티켓 구매 안내</h3>
-            <p>RAPBEAT 2024 티켓은 현재 판매 중입니다. 1일권과 2일권 모두 구매 가능하며, 조기 구매 시 할인 혜택을 받으실 수 있습니다. 티켓 구매는 공식 홈페이지나 지정된 예매처에서 가능합니다.</p>
-        </div>
-
-        <a href="#" class="cta-button">
-            <img src="image/symbol.svg" alt="memble logo" class="symbol">
-            티켓 구매하기
-        </a>
-
-        <div class="text-block">
-            <h3>교통 안내</h3>
-            <p>송도달빛축제공원은 인천 송도국제도시에 위치해 있습니다. 인천지하철 1호선 센트럴파크역에서 하차 후 도보로 이동하거나, 셔틀버스를 이용하시면 편리합니다. 자세한 교통 정보는 추후 공식 SNS를 통해 안내해 드리겠습니다.</p>
-        </div>
-
-        <div class="text-block" style="margin-bottom: 80px;">
-            <p>RAPBEAT와 함께 잊지 못할 추억을 만들어보세요. 여러분의 많은 관심과 참여 부탁드립니다!</p>
-        </div>
-
-    <footer>
-        <div class="footer-content">
-            <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
-            <div class="footer-text">
-                <p>
-                    주최 | <a href="https://culturethink.net/" target="_blank">CULTURE THINK</a>
-                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
-                        <img src="image/insta.png" alt="인스타그램">
-                    </a>
-                </p>
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+            <div class="lineup-info">
+                <div class="event-title">💫 𝗥𝗔𝗣𝗘𝗔𝗧 𝟮𝟬𝟮𝟰 💫</div>
+                <div class="event-title">DATE</div>
+                <div class="event-details">9/21 (SAT) ~ 9/22 (SUN)</div>
+                <div class="event-title">VENUE</div>
+                <div class="event-details">송도달빛축제공원</div>
+                <div class="event-title">LINE UP</div>
+                <div class="event-details">▫ 9/21(SAT) : 박재범, CHANGMO, NELL, 엄정화, 장기하, KISS OF LIFE, ASH ISLAND, B.I, LILBOI, TABBER, PAUL BLANCO, DASUTT, CAMO, 빛과 소금, 수퍼비, UNEDUCATED KID, 호미들, 한로로, BLOO, YOUNG POSSE, VANNER, REDDY, FLEEKY BANG, POLODARED, CHURRY, LEO, TRAY B, BOBBLEHEAD MUSIC, WORLD FAME US, KIDS ELECTRIC ORCHESTRA, DNOPF, BILL.E, HOLISHIP, EL CAPITXN</div>
+                <div class="event-details">▫ 9/22(SUN) : Nas, E SENS, SWINGS, BEWHY, LUCY, 기리보이, C JAMM, 가리온, JUSTHIS, KID MILLI, 체리필터, 양홍원, 한요한, NO:EL, RAD MUSEUM, JVCKI WAI, MISO, 거니, EK, FLOWSIK, KATIE, HYPNOSIS THERAPY, JUTO, DOBERMAN, YUNGIN, SEJIN, PULLUPBOI</div>
             </div>
+
+            <div class="highlight">
+                <h3>RAPBEAT 2024 하이라이트</h3>
+                <p>올해 RAPBEAT는 더욱 다채로운 라인업과 함께 여러분을 기다립니다. 국내외 유명 아티스트들의 공연은 물론, 다양한 장르의 음악을 한자리에서 즐길 수 있는 특별한 기회입니다. 송도달빛축제공원에서 펼쳐지는 이번 축제는 음악과 자연, 그리고 도시의 아름다움이 어우러진 환상적인 경험을 선사할 것입니다.</p>
+            </div>
+
+            <div class="text-block">
+                <h3>페스티벌 즐기기 팁</h3>
+                <ul>
+                    <li>편안한 신발과 옷차림을 준비해주세요. 긴 시간 동안 서 있거나 춤을 추게 될 거예요!</li>
+                    <li>물과 간식을 챙겨오세요. 수분 보충은 필수입니다.</li>
+                    <li>친구들과 함께 오면 더욱 즐거운 시간을 보낼 수 있어요.</li>
+                    <li>좋아하는 아티스트의 공연 시간을 미리 체크하고 일정을 계획해보세요.</li>
+                    <li>새로운 아티스트의 무대도 놓치지 마세요. 새로운 음악을 발견하는 즐거움을 느껴보세요!</li>
+                </ul>
+            </div>
+
+            <div class="text-block">
+                <h3>티켓 구매 안내</h3>
+                <p>RAPBEAT 2024 티켓은 현재 판매 중입니다. 1일권과 2일권 모두 구매 가능하며, 조기 구매 시 할인 혜택을 받으실 수 있습니다. 티켓 구매는 공식 홈페이지나 지정된 예매처에서 가능합니다.</p>
+            </div>
+
+            <a href="#" class="cta-button">
+                <img src="image/symbol.svg" alt="memble logo" class="symbol">
+                티켓 구매하기
+            </a>
+
+            <div class="text-block">
+                <h3>교통 안내</h3>
+                <p>송도달빛축제공원은 인천 송도국제도시에 위치해 있습니다. 인천지하철 1호선 센트럴파크역에서 하차 후 도보로 이동하거나, 셔틀버스를 이용하시면 편리합니다. 자세한 교통 정보는 추후 공식 SNS를 통해 안내해 드리겠습니다.</p>
+            </div>
+
+            <div class="text-block" style="margin-bottom: 80px;">
+                <p>RAPBEAT와 함께 잊지 못할 추억을 만들어보세요. 여러분의 많은 관심과 참여 부탁드립니다!</p>
+            </div>
+
         </div>
-    </footer>
+
+        <footer>
+            <div class="footer-content">
+                <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
+                <div class="footer-text">
+                    <p>
+                        주최 | <a href="https://culturethink.net/" target="_blank">CULTURE THINK</a>
+                        <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                            <img src="image/insta.png" alt="인스타그램">
+                        </a>
+                    </p>
+                    <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script>
         const slider = document.querySelector('.image-container');

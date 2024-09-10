@@ -15,15 +15,21 @@
             word-break: keep-all;
             overflow-wrap: break-word;
         }
-        .guideline-item p, .subtitle {
-            word-break: keep-all;
-            overflow-wrap: break-word;
-        }
-        .container, .footer-content {
-            width: 90%;
-            max-width: 1200px;
+        .wrapper {
+            width: 100%;
+            max-width: 768px;
             margin: 0 auto;
-            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 40px 16px;
+            box-sizing: border-box;
         }
         .hero-container {
             width: 100%;
@@ -33,24 +39,10 @@
             width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
             object-fit: cover;
         }
-        @media (min-width: 760px) {
-            .hero-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0px 0;
-            }
-            .hero-image {
-                width: 100%;
-                height: auto;
-                margin: 0 auto;
-                object-fit: cover;
-            }
-        }
         .main-title {
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 24px;
             font-weight: 700;
             line-height: 1.3;
@@ -91,17 +83,19 @@
             margin-right: 10px;
             vertical-align: middle;
         }
-        
-
         footer {
+            width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
             padding: 40px 0;
+            box-sizing: border-box;
         }
         .footer-content {
+            max-width: 768px;
+            margin: 0 auto;
             display: flex;
             align-items: flex-start;
-            padding: 0 20px;
+            padding: 0 16px;
         }
         .footer-logo {
             width: 120px;
@@ -126,97 +120,125 @@
             vertical-align: middle;
             margin-left: 5px;
         }
-        
+
+        @media (max-width: 767px) {
+            .hero-image {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
+            }
+
+            footer {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container, .footer-content {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .main-title {
+                font-size: 40px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="hero-container">
-        <img src="image/rule.png" alt="RAPBEAT x Street Rap Shit" class="hero-image">
-    </div>
-    <div class="container">
-        <h1 class="main-title">RAPBEAT 2024 관람 유의사항</h1>
-        <p class="subtitle">힙합의 리듬처럼 꼭 기억해주세요! 🎵 RAPBEAT 2024를 200% 즐기기 위한 꿀팁들이 드롭됐습니다.</p>
-
-        <div class="guideline-item">
-            <h3><span class="emoji">🎤</span>멤버십은 당신의 황금 마이크</h3>
-            <p>구매하거나 선물받은 멤버십, 잊지 말고 들고 오세요!
-            <span class="highlight">없으면 입장 못해요.</span> 랩 배틀에서 마이크 없는 것만큼 슬픈 일이죠.</p>
+    <div class="wrapper">
+        <div class="hero-container">
+            <img src="image/rule.png" alt="RAPBEAT x Street Rap Shit" class="hero-image">
         </div>
+        
+        <div class="container">
+            <h1 class="main-title">RAPBEAT 2024 관람 유의사항</h1>
+            <p class="subtitle">힙합의 리듬처럼 꼭 기억해주세요! 🎵 RAPBEAT 2024를 200% 즐기기 위한 꿀팁들이 드롭됐습니다.</p>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🚫</span>한 번 나가면 게임 오버</h3>
-            <p>밖에 나갔다 들어올 땐 새로운 입장권이 필요해요.
-            "나가서 돌아오지 않는 건 오직 내 Ex~"</p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🎤</span>멤버십은 당신의 황금 마이크</h3>
+                <p>구매하거나 선물받은 멤버십, 잊지 말고 들고 오세요!
+                <span class="highlight">없으면 입장 못해요.</span> 랩 배틀에서 마이크 없는 것만큼 슬픈 일이죠.</p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">⏰</span>시간은 금이에요, 힙합은 다이아몬드! 💎</h3>
-            <p>행사 일정과 시간, 꼭 체크하세요.
-            타이밍을 놓치면 <span class="highlight">최애 래퍼의 무대를 놓칠 수 있어요!</span></p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🚫</span>한 번 나가면 게임 오버</h3>
+                <p>밖에 나갔다 들어올 땐 새로운 입장권이 필요해요.
+                "나가서 돌아오지 않는 건 오직 내 Ex~"</p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">📸</span>카메라 든 당신, 스타는 무대 위에 있어요 🎭</h3>
-            <p>DSLR, 캠코더 같은 전문 장비는 집에 두고 오세요.
-            당신의 열정만 가져오세요. 그게 최고의 카메라에요!</p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">⏰</span>시간은 금이에요, 힙합은 다이아몬드! 💎</h3>
+                <p>행사 일정과 시간, 꼭 체크하세요.
+                타이밍을 놓치면 <span class="highlight">최애 래퍼의 무대를 놓칠 수 있어요!</span></p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🚫</span>플래시? 그건 90년대에나 💡</h3>
-            <p>플래시, 삼각대, 셀카봉으로 찍는 건 No No!
-            아티스트들의 흐름을 방해하지 마세요. <span class="highlight">Flow는 무대 위에서만!</span></p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">📸</span>카메라 든 당신, 스타는 무대 위에 있어요 🎭</h3>
+                <p>DSLR, 캠코더 같은 전문 장비는 집에 두고 오세요.
+                당신의 열정만 가져오세요. 그게 최고의 카메라에요!</p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🏃‍♂️</span>안전 제일! 랩처럼 빠르게, 하지만 조심히</h3>
-            <p>행사장에서는 뛰지 말고 걸어다녀요.
-            <span class="highlight">"빠른건 오직 아티스트들의 속사포 랩!, 여기선 천천히 걸어요!"</span></p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🚫</span>플래시? 그건 90년대에나 💡</h3>
+                <p>플래시, 삼각대, 셀카봉으로 찍는 건 No No!
+                아티스트들의 흐름을 방해하지 마세요. <span class="highlight">Flow는 무대 위에서만!</span></p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🚫</span>무기는 넘치는 흥과 랩뿐! 다른 건 가지고 오지 마세요 🔫</h3>
-            <p>위험한 물건은 반입 금지!
-            <span class="highlight">당신의 라임이 가장 강력한 무기예요.</span></p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🏃‍♂️</span>안전 제일! 랩처럼 빠르게, 하지만 조심히</h3>
+                <p>행사장에서는 뛰지 말고 걸어다녀요.
+                <span class="highlight">"빠른건 오직 아티스트들의 속사포 랩!, 여기선 천천히 걸어요!"</span></p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🚭</span>흡연은 랩처럼 밖에서 해주세요</h3>
-            <p>행사장 내 흡연은 금지!
-            "담배 연기 대신 비트에 취하자"가 우리의 모토예요.</p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🚫</span>무기는 넘치는 흥과 랩뿐! 다른 건 가지고 오지 마세요 🔫</h3>
+                <p>위험한 물건은 반입 금지!
+                <span class="highlight">당신의 라임이 가장 강력한 무기예요.</span></p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">💳</span>카드만 꽂으세요, 현금은 집에 두고 와요</h3>
-            <p><span class="highlight">행사장 내 음료는 카드 결제만 가능해요.</span>
-            현금은 오래된 힙합 CD 살 때 써요!</p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🚭</span>흡연은 랩처럼 밖에서 해주세요</h3>
+                <p>행사장 내 흡연은 금지!
+                "담배 연기 대신 비트에 취하자"가 우리의 모토예요.</p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🆔</span>신분증, 잊지 마세요!</h3>
-            <p>입장 시 본인 확인 절차가 있어요.
-            신분증 없이 오는 건 마이크 없이 랩하는 것과 같아요!</p>
-        </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">💳</span>카드만 꽂으세요, 현금은 집에 두고 와요</h3>
+                <p><span class="highlight">행사장 내 음료는 카드 결제만 가능해요.</span>
+                현금은 오래된 힙합 CD 살 때 써요!</p>
+            </div>
 
-        <div class="guideline-item">
-            <h3><span class="emoji">🎫</span>멤버십 = 입장권, 공식 굿즈 구매권</h3>
-            <p>멤버십 있는 사람만 입장과 굿즈 구매가 가능해요.
-            <span class="highlight">"무전 청중"은 힙합에 없어요!</span></p>
-        </div>
-    </div>
+            <div class="guideline-item">
+                <h3><span class="emoji">🆔</span>신분증, 잊지 마세요!</h3>
+                <p>입장 시 본인 확인 절차가 있어요.
+                신분증 없이 오는 건 마이크 없이 랩하는 것과 같아요!</p>
+            </div>
 
-    <footer>
-        <div class="footer-content">
-            <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
-            <div class="footer-text">
-                <p>
-                    주최 | <a href="https://culturethink.net/" target="_blank">CULTURE THINK</a>
-                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
-                        <img src="image/insta.png" alt="인스타그램">
-                    </a>
-                </p>
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+            <div class="guideline-item">
+                <h3><span class="emoji">🎫</span>멤버십 = 입장권, 공식 굿즈 구매권</h3>
+                <p>멤버십 있는 사람만 입장과 굿즈 구매가 가능해요.
+                <span class="highlight">"무전 청중"은 힙합에 없어요!</span></p>
             </div>
         </div>
-    </footer>
+
+        <footer>
+            <div class="footer-content">
+                <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
+                <div class="footer-text">
+                    <p>
+                        주최 | <a href="https://culturethink.net/" target="_blank">CULTURE THINK</a>
+                        <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                            <img src="image/insta.png" alt="인스타그램">
+                        </a>
+                    </p>
+                    <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

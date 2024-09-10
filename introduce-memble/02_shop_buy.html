@@ -14,33 +14,34 @@
             background-color: #f8f9fa;
         }
         .wrapper {
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            align-items: center;
+            overflow-x: hidden; /* 추가 */
         }
         .content {
             flex: 1;
             width: 100%;
-            max-width: 480px;
         }
         .container {
             width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 32px 16px;
+            padding-left: 16px;
+            padding-right: 16px;
             box-sizing: border-box;
         }
-        .hero-container {
+        .hero-container,
+        .image-container {
             width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
             overflow: hidden;
         }
-        .hero-image {
+        .hero-image,
+        .slide img {
             width: 100%;
+            height: auto;
             object-fit: cover;
-            object-position: center;
         }
         .main-title {
             font-size: 32px;
@@ -59,43 +60,26 @@
         .text-block {
             font-size: 18px;
             margin-bottom: 24px;
+            max-width: 800px;
         }
-        .image-container {
-            width: 100%;
-            overflow-x: auto;
-            white-space: nowrap;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+        .tip {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0 64px 0;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .image-container::-webkit-scrollbar {
-            display: none;
+        .tip strong {
+            color: #5653FE;
+            font-size: 18px;
         }
-        .slide {
-            display: inline-block;
-            width: 100%;
-            scroll-snap-align: start;
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
         }
-        .slide img {
-            width: 100%;
-            height: auto;
-        }
-        .dot-indicators {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 8px;
-            cursor: pointer;
-        }
-        .dot.active {
-            background-color: #5653FE;
+        li {
+            margin-bottom: 16px;
         }
         .tab {
             display: flex;
@@ -128,19 +112,28 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+        .membership-example,
+        .blockchain-networks,
+        .gift-options {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
         footer {
             width: 100%;
-            max-width: 480px;
-            padding: 64px 0;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
+            padding: 64px 16px;
+            box-sizing: border-box;
         }
         .footer-content {
-            max-width: 480px;
+            max-width: 768px;
             margin: 0 auto;
             display: flex;
             align-items: flex-start;
-            padding: 0 16px;
+            justify-content: flex-start;
         }
         .footer-logo {
             width: 128px;
@@ -148,6 +141,7 @@
         }
         .footer-text {
             flex: 1;
+            text-align: left;
         }
         .footer-text p {
             margin: 8px 0;
@@ -159,36 +153,29 @@
             color: white;
             text-decoration: none;
         }
-        .social-link img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
 
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
             .wrapper {
-                align-items: stretch;
-            }
-            footer {
                 width: 100%;
             }
-        }
 
-        @media (min-width: 768px) {
-            .container,
             .hero-container,
-            .footer-content {
-                max-width: 480px;
+            .image-container {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
             }
-        }
 
-        @media (min-width: 1200px) {
-            .hero-container, 
-            .container, 
-            footer,
+            footer {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                padding-left: 0;
+                padding-right: 0;
+            }
+
             .footer-content {
-                max-width: 480px;
+                padding-left: 16px;
+                padding-right: 16px;
             }
         }
     </style>
@@ -287,7 +274,7 @@
 
                     <ul>
                         <li>프리미엄 멤버십은 대부분 수량이 한정되어 있어요. 구매를 원하신다면 서두르세요!</li>
-                        <li>VIP 교환권으로 이벤트 당일 특한 혜택을 누릴 수 있어요. 꼭 챙겨가세요!</li>
+                        <li>VIP 교환권으로 이벤트 당일 특별한 혜택을 누릴 수 있어요. 꼭 챙겨가세요!</li>
                         <li>멤버십 구매 시 세부 이용 안내를 꼼꼼히 확인해보세요. 놓치기 쉬운 특별 혜택이 있을 수 있답니다.</li>
                         <li>이벤트 전 멤버십 관련 공지사항을 주의 깊게 체크해주세요. 중요한 정보가 업데이트될 수 있어요!</li>
                     </ul>
@@ -404,7 +391,7 @@
             </div>
         </footer>
     </div>
-
+    
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
@@ -454,15 +441,6 @@
                 updateDots(index);
                 currentIndex = index;
             }
-        });
-    
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => currentSlide(index));
-        });
-
-        // 페이지 로드 시 첫 번째 탭을 활성화
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.tablinks').click();
         });
     </script>
 </body>

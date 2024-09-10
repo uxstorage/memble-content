@@ -21,16 +21,25 @@
         }
         .wrapper {
             width: 100%;
-            max-width: 1200px;
+            max-width: 768px;
             margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            max-width: 768px;
+            padding: 0 16px;
+            box-sizing: border-box;
+            flex: 1;
+        }
+        .banner {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
         .main-title {
             font-size: 36px;
@@ -50,8 +59,8 @@
             width: 100%;
         }
         .page-link {
-            flex: 1 1 calc(33.333% - 40px);
-            max-width: calc(33.333% - 40px);
+            flex: 1 1 100%;
+            max-width: 100%;
             background-color: #fff;
             border-radius: 16px;
             overflow: hidden;
@@ -61,7 +70,7 @@
             box-shadow: rgba(62, 93, 126, 0.1) 0px 2px 30px 0px;
         }
         .page-link:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
         .page-link-thumbnail {
             width: 100%;
@@ -73,29 +82,29 @@
             padding: 16px;
         }
         .page-link-content h2 {
-            font-size: 24px;
+            font-size: 20px;
             margin-top: 0;
             margin-bottom: 8px;
             color: #5653FE;
         }
         .page-link-content p {
-            font-size: 16px;
+            font-size: 14px;
             margin: 0;
         }
         footer {
+            width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
             padding: 40px 0;
             margin-top: 40px;
         }
         .footer-content {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 0 16px;
+            box-sizing: border-box;
             display: flex;
             align-items: flex-start;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
         }
         .footer-logo {
             width: 120px;
@@ -247,7 +256,10 @@
             visibility: hidden;
             position: absolute;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
+            .wrapper {
+                width: 100%;
+            }
             .main-title {
                 font-size: 28px;
             }
@@ -261,21 +273,31 @@
                 flex: 1 1 100%;
                 max-width: 100%;
             }
+            footer {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                padding-left: 0;
+                padding-right: 0;
+            }
             .footer-content {
-                flex-direction: column;
-                align-items: flex-start;
+                padding-left: 16px;
+                padding-right: 16px;
             }
         }
-        @media (max-width: 1200px) {
-            .page-link {
-                flex: 1 1 calc(50% - 20px);
-                max-width: calc(50% - 20px);
+        @media (min-width: 768px) {
+            .container, .footer-content {
+                padding-left: 0;
+                padding-right: 0;
             }
-        }
-        @media (max-width: 768px) {
             .page-link {
-                flex: 1 1 100%;
-                max-width: 100%;
+                flex: 1 1 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+            }
+            .page-link-content h2 {
+                font-size: 22px;
+            }
+            .page-link-content p {
+                font-size: 16px;
             }
         }
         html, body {
@@ -296,17 +318,11 @@
             margin-top: 40px;
             flex-shrink: 0; /* 추가 */
         }
-        .banner {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <img src="image/memble-insider-banner-3d-membership.jpg" alt="Memble Insider 배너" class="banner" style="width: 100vw; margin-left: calc(50% - 50vw); max-height: 300px;">
+        <img src="image/memble-insider-banner-3d-membership.jpg" alt="Memble Insider 배너" class="banner">
         <div class="container">
             <h1 class="main-title">MEMBLE INSIDER</h1>
             <div class="tab">
@@ -366,7 +382,7 @@
                         <img src="rapbeat-content/image/free-poster.png" alt="프리스타일 배틀 썸네일" class="page-link-thumbnail">
                         <div class="page-link-content">
                             <h2>당신의 라임이 세상을 흔들 차례! 🎤🔥</h2>
-                            <p>무대를 장악할 준비 됐나요? 당신의 숨겨진 랩 실력을 보여줄 시간!</p>
+                            <p>무대를 장악할 준비 됐나? 당신의 숨겨진 랩 실력을 보여줄 시간!</p>
                         </div>
                     </a>
                     <a href="rapbeat-content/00_shuttle_bus_info.html" class="page-link actual-content" style="display: none;">
@@ -417,16 +433,16 @@
                     </a>
                 </div>
             </div>
+            <footer>
+                <div class="footer-content">
+                    <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
+                    <div class="footer-text">
+                        <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a></p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
-    <footer>
-        <div class="footer-content">
-            <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
-            <div class="footer-text">
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a></p>
-            </div>
-        </div>
-    </footer>
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;

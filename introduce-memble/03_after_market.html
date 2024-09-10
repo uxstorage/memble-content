@@ -14,11 +14,24 @@
             background-color: #f8f9fa;
             word-break: break-all;
         }
-        .container {
-            width: 88%;
-            max-width: 1200px;
+        .wrapper {
+            width: 100%;
+            max-width: 768px;
             margin: 0 auto;
-            padding: 64px 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* 추가 */
+        }
+        .content {
+            flex: 1;
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+            box-sizing: border-box;
         }
         .hero-container {
             width: 100%;
@@ -26,6 +39,7 @@
         }
         .hero-image {
             width: 100%;
+            height: auto;
             object-fit: cover;
             object-position: center;
         }
@@ -68,18 +82,18 @@
             margin-bottom: 16px;
         }
         footer {
+            width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
-            padding: 64px 0;
-            margin-top: 64px; /* footer와 콘텐츠 사이의 간격 유지 */
-            width: 100%; /* 전체 너비로 설정 */
+            padding: 64px 16px;
+            box-sizing: border-box;
         }
         .footer-content {
+            max-width: 768px;
+            margin: 0 auto;
             display: flex;
             align-items: flex-start;
-            padding: 0 16px;
-            max-width: 1200px; /* 컨테이너와 동일한 최대 너비 설정 */
-            margin: 0 auto; /* 중앙 정렬 */
+            justify-content: flex-start;
         }
         .footer-logo {
             width: 128px;
@@ -87,6 +101,7 @@
         }
         .footer-text {
             flex: 1;
+            text-align: left;
         }
         .footer-text p {
             margin: 8px 0;
@@ -98,70 +113,99 @@
             color: white;
             text-decoration: none;
         }
+
+        @media (max-width: 767px) {
+            .wrapper {
+                width: 100%;
+            }
+
+            .hero-container {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
+            }
+
+            footer {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .footer-content {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="hero-container">
-        <img src="image/transfer_market_thumbnail.png" alt="Memble 양도마켓" class="hero-image">
-    </div>
-    
-    <div class="container">
-        <h1 class="main-title">Memble 양도마켓 소개 및 가이드</h1>
-        
-        <h2 class="section-title">🌟 Memble의 양도마켓에 오신 것을 환영합니다!</h2>
-        <div class="text-block">
-            Memble에서 멤버십의 새로운 매력을 발견하세요. 필요한 멤버십을 찾거나, 더 이상 사용하지 않는 멤버십을 다른 분께 양도할 수 있어요. 멤버십의 순환을 통해 더 많은 사람들이 문화를 즐길 수 있게 됩니다.
-        </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="hero-container">
+                <img src="image/transfer_market_thumbnail.png" alt="Memble 양도마켓" class="hero-image">
+            </div>
+            
+            <div class="container">
+                <h1 class="main-title">Memble 양도마켓 소개 및 가이드</h1>
+                
+                <h2 class="section-title">🌟 Memble의 양도마켓에 오신 것을 환영합니다!</h2>
+                <div class="text-block">
+                    Memble에서 멤버십의 새로운 매력을 발견하세요. 필요한 멤버십을 찾거나, 더 이상 사용하지 않는 멤버십을 다른 분께 양도할 수 있어요. 멤버십의 순환을 통해 더 많은 사람들이 문화를 즐길 수 있게 됩니다.
+                </div>
 
-        <h3 class="section-title">🎫 양도마켓 상품 둘러보기</h3>
-        <div class="text-block">
-            양도 중인 멤버십의 상세 정보를 한눈에 확인할 수 있어요 (이벤트명, 날짜, 좌석 등). 판매자가 제시한 가격과 원가를 비교해볼 수 있는 기능도 추후에 고려 중이에요. 다양한 카테고리의 양도 멤버십 상품을 스크롤하며 구경해보세요. 인기 상품과 새로 등록된 상품을 쉽게 찾아볼 수 있어요.
-        </div>
-        <div class="text-block">
-            Rapbeat Festival 2024부터 인기 콘서트까지, 다양한 양도 멤버십이 여러분을 기다리고 있어요!
-        </div>
-        <div class="tip">
-            <strong>💡 꿀팁:</strong> 인기 멤버십은 순식간에 거래될 수 있어요! 관심 있는 양도 게시글을 자주 확인하세요.
-        </div>
+                <h3 class="section-title">🎫 양도마켓 상품 둘러보기</h3>
+                <div class="text-block">
+                    양도 중인 멤버십의 상세 정보를 한눈에 확인할 수 있어요 (이벤트명, 날짜, 좌석 등). 판매자가 제시한 가격과 원가를 비교해볼 수 있는 기능도 추후에 고려 중이에요. 다양한 카테고리의 양도 멤버십 상품을 스크롤하며 구경해보세요. 인기 상품과 새로 등록된 상품을 쉽게 찾아볼 수 있어요.
+                </div>
+                <div class="text-block">
+                    Rapbeat Festival 2024부터 인기 콘서트까지, 다양한 양도 멤버십이 여러분을 기다리고 있어요!
+                </div>
+                <div class="tip">
+                    <strong>💡 꿀팁:</strong> 인기 멤버십은 순식간에 거래될 수 있어요! 관심 있는 양도 게시글을 자주 확인하세요.
+                </div>
 
-        <h3 class="section-title">💎 나의 멤버십 양도</h3>
-        <div class="text-block">
-            보유중인 멤버십을 양도마켓에 등록해보세요!
-        </div>
-        <div class="text-block">
-            더 이상 사용하지 못하는 멤버십, 새로운 주인을 찾아주세요 ✨ 몇 번의 클릭만으로 멤버십 정보를 입력하고 가격을 설정할 수 있어요 💸 추후에 구매 희망자와의 실시간 채팅 기능을 준비해볼 예정이에요. 더욱 빠르고 편리한 거래 경험을 제공하기 위해 노력하고 있어요! 😊
-        </div>
-        <div class="tip">
-            <strong>💡 꿀팁:</strong> 정확한 멤버십 정보와 합리적인 가격 설정으로 빠른 거래를 유도해보세요!
-        </div>
+                <h3 class="section-title">💎 나의 멤버십 양도</h3>
+                <div class="text-block">
+                    보유중인 멤버십을 양도마켓에 등록해보세요!
+                </div>
+                <div class="text-block">
+                    더 이상 사용하지 못하는 멤버십, 새로운 주인을 찾아주세요 ✨ 몇 번의 클릭만으로 멤버십 정보를 입력하고 가격을 설정할 수 있어요 💸 추후에 구매 희망자와의 실시간 채팅 기능을 준비해볼 예정이에요. 더욱 빠르고 편리한 거래 경험을 제공하기 위해 노력하고 있어요! 😊
+                </div>
+                <div class="tip">
+                    <strong>💡 꿀팁:</strong> 정확한 멤버십 정보와 합리적인 가격 설정으로 빠른 거래를 유도해보세요!
+                </div>
 
-        <h3 class="section-title">🔍 편리한 검색 기능</h3>
-        <div class="text-block">
-            곧 여러분을 위한 편리한 검색 기능이 추가될 예정이에요! 이벤트명, 날짜, 가격 범위 등 다양한 조건으로 원하는 멤버십을 쉽게 찾을 수 있게 될 거예요. 😊
-        </div>
-        <div class="text-block">
-            관심 아티스트나 공연장 알림 기능도 개발 중이에요. 곧 여러분이 원하는 멤버십을 놓치지 않고 빠르게 확인할 수 있을 거예요. 기대해 주세요! 🎉
-        </div>
+                <h3 class="section-title">🔍 편리한 검색 기능</h3>
+                <div class="text-block">
+                    곧 여러분을 위한 편리한 검색 기능이 추가될 예정이에요! 이벤트명, 날짜, 가격 범위 등 다양한 조건으로 원하는 멤버십을 쉽게 찾을 수 있게 될 거예요. 😊
+                </div>
+                <div class="text-block">
+                    관심 아티스트나 공연장 알림 기능도 개발 중이에요. 곧 여러분이 원하는 멤버십을 놓치지 않고 빠르게 확인할 수 있을 거예요. 기대해 주세요! 🎉
+                </div>
 
-        <h3 class="section-title">💡 Memble 양도마켓 200% 활용하기</h3>
-        <div class="text-block">
-            <p>Memble의 안전거래 시스템을 이용하면 더욱 안전하고 편리합니다. 직거래 대신 Memble의 안전결제 시스템을 통해 사기 걱정 없는 안전한 거래가 가능합니다. 놓친 멤버십을 구하거나 필요 없어진 멤버십을 양도하는 모든 순간, Memble 양도마켓이 여러분과 함께합니다! ✨</p>
-        </div>
-        <div class="text-block">
-            자, 이제 당신의 Memble 양도마켓 여정을 시작해볼까요? 어떤 특별한 멤버십들이 기다리고 있을지 정말 기대되지 않나요? 😉
-        </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
-            <div class="footer-text">
-                <p>
-                    <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
-                    </a>
-                </p>
-                <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                <h3 class="section-title">💡 Memble 양도마켓 200% 활용하기</h3>
+                <div class="text-block">
+                    <p>Memble의 안전거래 시스템을 이용하면 더욱 안전하고 편리합니다. 직거래 대신 Memble의 안전결제 시스템을 통해 사기 걱정 없는 안전한 거래가 가능합니다. 놓친 멤버십을 구하거나 필요 없어진 멤버십을 양도하는 모든 순간, Memble 양도마켓이 여러분과 함께합니다! ✨</p>
+                </div>
+                <div class="text-block">
+                    자, 이제 당신의 Memble 양도마켓 여정을 시작해볼까요? 어떤 특별한 멤버십들이 기다리고 있을지 정말 기대되지 않나요? 😉
+                </div>
             </div>
         </div>
-    </footer>
+
+        <footer>
+            <div class="footer-content">
+                <img src="image/logo_w_h.svg" alt="RAPBEAT 로고" class="footer-logo">
+                <div class="footer-text">
+                    <p>
+                        <a href="https://www.instagram.com/culturethink/" class="social-link" target="_blank">
+                        </a>
+                    </p>
+                    <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a> </p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
