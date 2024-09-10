@@ -9,37 +9,32 @@
             font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 0 20px; /* 좌우 여백 추가 */
             color: #333;
             background-color: #f8f9fa;
             word-break: keep-all;
             overflow-wrap: break-word;
+            overflow-x: hidden;
         }
         .guideline-item p, .subtitle {
             word-break: keep-all;
             overflow-wrap: break-word;
         }
-        .wrapper {
-            width: 100%;
-            max-width: 768px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
         .container {
             width: 100%;
-            max-width: 768px;
-            padding: 0 16px;
+            max-width: 1160px; /* 1200px - (20px * 2) */
+            margin: 0 auto;
             box-sizing: border-box;
-            flex: 1;
         }
         .banner {
-            width: 100%;
+            width: calc(100% + 40px); /* body의 padding을 고려하여 조정 */
             max-height: 200px;
             object-fit: cover;
+            margin-left: -20px; /* body의 왼쪽 padding만큼 이동 */
             margin-bottom: 20px;
+        }
+        .wrapper {
+            min-height: calc(100vh - 240px);
         }
         .main-title {
             font-size: 36px;
@@ -57,10 +52,11 @@
             gap: 24px;
             margin-top: 16px;
             width: 100%;
+            justify-content: flex-start;
         }
         .page-link {
-            flex: 1 1 100%;
-            max-width: 100%;
+            flex: 0 0 calc(33.333% - 16px);
+            max-width: calc(33.333% - 16px);
             background-color: #fff;
             border-radius: 16px;
             overflow: hidden;
@@ -92,19 +88,17 @@
             margin: 0;
         }
         footer {
-            width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
             padding: 40px 0;
             margin-top: 40px;
+            margin-left: -20px; /* body의 왼쪽 padding만큼 이동 */
+            width: calc(100% + 40px); /* body의 padding을 고려하여 조정 */
         }
         .footer-content {
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 0 16px;
-            box-sizing: border-box;
             display: flex;
             align-items: flex-start;
+            justify-content: flex-start;
         }
         .footer-logo {
             width: 120px;
@@ -256,6 +250,12 @@
             visibility: hidden;
             position: absolute;
         }
+        @media (max-width: 1200px) {
+            .page-link {
+                flex: 0 0 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+            }
+        }
         @media (max-width: 767px) {
             .wrapper {
                 width: 100%;
@@ -270,14 +270,14 @@
                 font-size: 16px;
             }
             .page-link {
-                flex: 1 1 100%;
+                flex: 0 0 100%;
                 max-width: 100%;
             }
             footer {
-                width: 100vw;
+                width: 100%;
                 margin-left: calc(-50vw + 50%);
-                padding-left: 0;
-                padding-right: 0;
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .footer-content {
                 padding-left: 16px;
@@ -285,12 +285,16 @@
             }
         }
         @media (min-width: 768px) {
-            .container, .footer-content {
+            .container{
                 padding-left: 0;
                 padding-right: 0;
+            } 
+            .footer-content {
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .page-link {
-                flex: 1 1 calc(50% - 12px);
+                flex: 0 0 calc(50% - 12px);
                 max-width: calc(50% - 12px);
             }
             .page-link-content h2 {
@@ -298,6 +302,12 @@
             }
             .page-link-content p {
                 font-size: 16px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .page-link {
+                flex: 0 0 calc(33.333% - 16px);
+                max-width: calc(33.333% - 16px);
             }
         }
         html, body {
@@ -316,13 +326,28 @@
             color: white;
             padding: 40px 0;
             margin-top: 40px;
-            flex-shrink: 0; /* 추가 */
+            flex-shrink: 0;
+        }
+        
+        /* 반응형 디자인을 위한 미디어 쿼리 */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 15px; /* 모바일에서 좌우 여백 줄임 */
+            }
+            .banner {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+            }
+            footer {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+            }
         }
     </style>
 </head>
 <body>
+    <img src="image/memble-insider-banner-3d-membership.jpg" alt="Memble Insider 배너" class="banner">
     <div class="wrapper">
-        <img src="image/memble-insider-banner-3d-membership.jpg" alt="Memble Insider 배너" class="banner">
         <div class="container">
             <h1 class="main-title">MEMBLE INSIDER</h1>
             <div class="tab">
@@ -433,16 +458,18 @@
                     </a>
                 </div>
             </div>
-            <footer>
-                <div class="footer-content">
-                    <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
-                    <div class="footer-text">
-                        <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a></p>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <img src="image/logo_w_h.svg" alt="MEMBLE 로고" class="footer-logo">
+                <div class="footer-text">
+                    <p>© 2024 Memble. All rights reserved. Operated by <a href="https://eqbr.com" target="_blank">EQBR</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
