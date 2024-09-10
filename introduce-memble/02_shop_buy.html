@@ -70,7 +70,8 @@
             padding: 24px;
             margin: 32px 0 64px 0;
             font-size: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
         .tip strong {
             color: #5653FE;
@@ -121,9 +122,10 @@
             border-radius: 12px;
             padding: 24px;
             margin: 32px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        footer {
+        .footer {
             width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
@@ -169,6 +171,163 @@
                 width: calc(100% + 32px);
             }
         }
+
+        .membership-example {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .membership-example h4 {
+            color: #5653FE;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .membership-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .membership-detail {
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .detail-icon {
+            font-size: 24px;
+            margin-right: 16px;
+        }
+
+        .detail-content {
+            flex: 1;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #5653FE;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .membership-note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        .gift-option-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gift-option-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #eef1f3;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .gift-option-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .gift-option-card h5 {
+            color: #5653FE;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .gift-option-card p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .blockchain-networks {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .blockchain-networks h4 {
+            color: #5653FE;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .network-cards {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .network-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .network-icon {
+            margin-right: 16px;
+        }
+
+        .network-info {
+            flex: 1;
+        }
+
+        .network-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .currency-list {
+            display: flex;
+            gap: 8px;
+        }
+
+        .currency {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .default-setting {
+            display: flex;
+            align-items: center;
+            color: #5653FE;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+
+        .default-setting svg {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -201,7 +360,7 @@
 
                     <div class="image-container">
                         <div class="slide">
-                            <img src="https://via.placeholder.com/600x400.png?text=Memble+Premium+Membership" alt="멤블 프리미엄 멤버십">
+                            <img src="image/membership_item.png" alt="멤블 프���미엄 멤버십">
                         </div>
                     </div>
 
@@ -209,16 +368,25 @@
                         <h4>프리미엄 멤버십 예시: RAPBEAT 골드 카바나</h4>
                         <div class="membership-details">
                             <div class="membership-detail">
-                                <div class="detail-label">혜택</div>
-                                <div class="detail-value">VVIP 멤버십 교환권 27매, 호스트용 VVIP 멤버십 교환권 1매</div>
+                                <div class="detail-icon">🎟️</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">혜택</div>
+                                    <div class="detail-value">VVIP 멤버십 교환권 27매, 호스트용 VVIP 멤버십 교환권 1매</div>
+                                </div>
                             </div>
                             <div class="membership-detail">
-                                <div class="detail-label">가격</div>
-                                <div class="detail-value">10,000,000원</div>
+                                <div class="detail-icon">💰</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">가격</div>
+                                    <div class="detail-value">10,000,000원</div>
+                                </div>
                             </div>
                             <div class="membership-detail">
-                                <div class="detail-label">수량</div>
-                                <div class="detail-value">1EA (한정 수량)</div>
+                                <div class="detail-icon">🔢</div>
+                                <div class="detail-content">
+                                    <div class="detail-label">수량</div>
+                                    <div class="detail-value">1EA (한정 수량)</div>
+                                </div>
                             </div>
                         </div>
                         <p class="membership-note">* 이 멤버십은 예시이며, 실제 제공되는 멤버십은 이벤트에 따라 다를 수 있습니다.</p>
@@ -234,23 +402,18 @@
                         소중한 사람에게 특별한 경험을 선물하고 싶으신가요? 멤블에서는 다양한 멤버십 선물 옵션을 제공합니다. 각 옵션의 특징을 자세히 살펴볼까요?
                     </div>
 
-                    <div class="gift-options">
-                        <h4>선물 옵션</h4>
-                        <ul>
-                            <li>
-                                <span class="option">멤버십 직접 선물하기</span>:
-                                <p>선물 받는 사람의 계정으로 멤버십을 직접 전달합니다. 받는 사람이 즉시 멤버십 혜택을 누릴 수 있어요.</p>
-                            </li>
-                            <li>
-                                <span class="option">멤버십 교환권 선물하기</span>:
-                                <p>구매한 멤버십 패키지에 포함된 교환권 중 하나를 선물합니다. 예를 들어, 10장의 VIP 교환권이 포함된 패키지를 구매하면, 그 중 한 장을 선물할 수 있어요. 받는 사람은 이 교환권을 원하는 시기에 멤버십으로 교환할 수 있습니다.</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="text-block">
-                        <strong>교환권 선물하기 예시:</strong><br>
-                        "RAPBEAT 페스티벌 VIP 패키지(10장의 교환권 포함)를 구매했어요. 이 중 한 장을 친구 생일 선물로 주고 싶어요. 친구는 이 교환권으로 원하는 날짜에 VIP 혜택을 누릴 수 있겠죠?"
+                    <h4 class="section-title">🎁 선물 옵션</h4>
+                    <div class="gift-option-cards">
+                        <div class="gift-option-card">
+                            <div class="gift-option-icon">🎫</div>
+                            <h5>멤버십 직접 선물하기</h5>
+                            <p>선물 받는 사람의 계정으로 멤버십을 직접 전달합니다. 받는 사람이 즉시 멤버십 혜택을 누릴 수 있어요.</p>
+                        </div>
+                        <div class="gift-option-card">
+                            <div class="gift-option-icon">🔄</div>
+                            <h5>멤버십 교환권 선물하기</h5>
+                            <p>구매한 멤버십 패키지에 포함된 교환권 중 하나를 선물합니다. 받는 사람은 이 교환권을 원하는 시기에 멤버십으로 교환할 수 있습니다.</p>
+                        </div>
                     </div>
 
                     <div class="tip">
@@ -283,13 +446,13 @@
                     <h2 class="section-title">🌟 멤블(Memble)의 다채로운 결제방식을 한번 체험해보세요!</h2>
                     
                     <div class="text-block">
-                        여러분의 편의를 최우선으로 생각하는 멤블은 다양한 결제 방식을 준비했어요. 어떤 방법이 여러분의 마음을 사로잡을까요? 함께 알아볼까요?
+                        여러분의 편의를 최우선으로 생각하는 멤블은 다양한 결 방식을 준비했어요. 어떤 방법이 여러분의 마음을 사로잡을까요? 함께 알아볼까요?
                     </div>
 
                     <h3 class="section-title">💳 국내 카드로 간편하게</h3>
                     
                     <div class="text-block">
-                        국내에 계신 분들을 위한 완벽한 선택, 바로 국내 카드 결제예요. KG이니시스를 통해 안전���고 빠르게 결제할 수 있어요. 여러분이 가진 모든 카드로 결제 가능하니, 걱정 마세요!
+                        국내에 계신 분들을 위한 완벽한 선택, 바로 국내 카드 결제예요. KG이니시스를 통해 안전고 빠르게 결제할 수 있어요. 여러분이 가진 모든 카드로 결제 가능하니, 걱정 마세요!
                     </div>
 
                     <div class="text-block">
@@ -309,31 +472,43 @@
                     <h3 class="section-title">🌐 EQ Hub Pay - 블록체인의 미래를 지금 경험하세요!</h3>
 
                     <div class="text-block">
-                        멤블의 자체 서비스인 EQ Hub Pay로 블록체인 기술의 혁신을 직접 체험해보세요! 가상화폐로 빠르고 안전하게 결제할 수 있어요. 미래의 결제 방식을 지금 경험해보세요!
+                        멤블의 자체 서비스인 EQ Hub Pay를 통해 가상화폐로 빠르고 안전하게 결제할 수 있어요.
                     </div>
 
-                    <div class="blockchain-networks">
-                        <h4>지원되는 네트워크와 화폐</h4>
                         <div class="network-cards">
                             <div class="network-card">
-                                <div class="network-name">Ethereum</div>
-                                <div class="currency-list">
-                                    <span class="currency">USDT</span>
-                                    <span class="currency">USDC</span>
+                                <div class="network-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 1.75L5.75 12.25L12 16L18.25 12.25L12 1.75Z" fill="#8A92B2"/>
+                                        <path d="M12 16L5.75 12.25L12 22.25L18.25 12.25L12 16Z" fill="#62688F"/>
+                                    </svg>
+                                </div>
+                                <div class="network-info">
+                                    <div class="network-name">Ethereum</div>
+                                    <div class="currency-list">
+                                        <span class="currency">USDT</span>
+                                        <span class="currency">USDC</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="network-card">
-                                <div class="network-name">Avalanche C-Chain</div>
-                                <div class="currency-list">
-                                    <span class="currency">USDC</span>
+                                <div class="network-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L3 12L12 22L21 12L12 2Z" fill="#E84142"/>
+                                        <path d="M12 7L7 12L12 17L17 12L12 7Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="network-info">
+                                    <div class="network-name">Avalanche C-Chain</div>
+                                    <div class="currency-list">
+                                        <span class="currency">USDC</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <p class="default-setting">기본 설정: Ethereum - USDT (변경 가능!)</p>
-                    </div>
 
-                    <div class="text-block">
-                        "와! 블록체인으로 결제한다니, 정말 미래지향적이에요. 한번 써봐야겠어요."
+                    <div class="text-block" style="margin-top: 24px;">
+                        "와! 블록체인으로 결제한다니, 정말 미래지향적이에요. 저도 꼭 한번 써봐야겠어요!"
                     </div>
 
                     <h3 class="section-title">💡 EQ Hub Pay 사용 꿀팁!</h3>
@@ -366,7 +541,7 @@
                         "자, 이제 어떤 방식으로 결제해볼까요? 여러분의 특별한 순간을 위한 첫 걸음, 지금 시작해보세요! 💖✨"
                     </div>
                 </div>
-            </div> <!-- container 닫기 -->
+            </div> 
         </div>
 
         <footer>

@@ -75,7 +75,7 @@
             padding: 24px;
             margin: 32px 0 64px 0;
             font-size: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(185, 185, 185, 0.05);
         }
         .tip p {
             margin: 0;
@@ -203,6 +203,28 @@
                 display: none;
             }
         }
+
+        .single-image {
+            width: 100%;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .fit-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            max-height: 600px;
+        }
+
+        @media (max-width: 767px) {
+            .single-image {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -217,29 +239,32 @@
                 
                 <h2 class="section-title"><span class="emoji">🎁</span> 미등록 멤버십 선물하기</h2>
                 
-                <div class="image-container">
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면1" alt="미등록 멤버십 선물하기 화면1">
-                    </div>
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면2" alt="미등록 멤버십 선물하기 화면2">
-                    </div>
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=미등록+멤버십+선물하기+화면3" alt="미등록 멤버십 선물하기 화면3">
-                    </div>
+                <div class="image-container single-image">
+                    <img src="image/present_membership.png" alt="미등록 멤버십 선물하기 화면" class="fit-image">
                 </div>
-                <div class="dot-indicators">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-
+                
                 <div class="text-block">
-                    <p>안녕하세요, 멤블러 여러분! 오늘은 미등록 멤버십을 선물하는 방법에 대해 알아볼게요. 먼저 <span class="highlight">미등록 탭</span>에서 원하는 멤버십 카드를 선택해주세요. 그러면 '등록하기', '선물하기', '양도하기' 세 가지 옵션이 나타날 텐데요, 여기서 <span class="highlight">'선물하기' 버튼</span>을 눌러주세요.</p>
-
-                    <p>그 다음, 화면 하단에 있는 <span class="highlight">'받는사람 추가' 버튼</span>을 클릭하세요. 이제 선물을 받을 분의 이메일 주소를 입력할 차례입니다. 주의할 점은 반드시 <span class="highlight">멤블과 연동된 이메일 주소</span>여야 한다는 거예요. 그리고 멤버십에 포함된 아이템 중에서 <span class="highlight">선물 가능한 아이템</span>을 선택하면 됩니다.</p>
-
-                    <p>여러 명에게 동시에 선물하고 싶으신가요? 걱정 마세요! 이메일 주소를 여러 번 입력하면 한 번에 여러 명에게 선물할 수 있답니다.</p>
+                    <h3 class="step-title">🎁 미등록 멤버십 선물하기</h3>
+                    <ol class="step-list">
+                        <li>
+                            <strong>멤버십 선택:</strong> <span class="highlight">미등록 탭</span>에서 원하는 멤버십 카드를 선택하세요.
+                        </li>
+                        <li>
+                            <strong>선물하기 버튼 클릭:</strong> '등록하기', '선물하기', '양도하기' 중 <span class="highlight">'선물하기' 버튼</span>을 눌러주세요.
+                        </li>
+                        <li>
+                            <strong>받는 사람 추가:</strong> 화면 하단의 <span class="highlight">'받는사람 추가' 버튼</span>을 클릭하세요.
+                        </li>
+                        <li>
+                            <strong>이메일 입력:</strong> <span class="highlight">멤블과 연동된 이메일 주소</span>를 입력하세요.
+                        </li>
+                        <li>
+                            <strong>선물하기:</strong>이제 추가 다 했으니 <span class="highlight">선물하기 버튼 누르면</span> 진짜 선물하기 끝!
+                        </li>
+                    </ol>
+                    <div class="tip-box">
+                        <p><span class="emoji">💡</span> <strong>꿀팁:</strong> 여러 명에게 동시에 선물하고 싶다면, 이메일 주소를 여러 개 입력하세요!</p>
+                    </div>
                 </div>
                 
                 <div class="tip">
@@ -248,21 +273,8 @@
 
                 <h2 class="section-title"><span class="emoji">🎊</span> 선물받은 코드 등록하기</h2>
 
-                <div class="image-container">
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면1" alt="선물받은 코드 등록하기 화면1">
-                    </div>
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면2" alt="선물받은 코드 등록하기 화면2">
-                    </div>
-                    <div class="slide">
-                        <img src="https://via.placeholder.com/1200x600.png?text=선물받은+코드+등록하기+화면3" alt="선물받은 코드 등록하기 화면3">
-                    </div>
-                </div>
-                <div class="dot-indicators">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                <div class="image-container single-image">
+                    <img src="image/register_code.png" alt="미등록 멤버십 선물하기 화면" class="fit-image">
                 </div>
 
                 <div class="text-block">
@@ -273,7 +285,7 @@
 
                 <h3 class="section-title"><span class="emoji">🌟</span> 멤블과 함께하는 특별한 순간!</h3>
                 <div class="text-block">
-                    <p>멤버십을 친구들과 함께 공유하면 더욱 즐거운 추억을 만들 수 있어요. 소중한 사람에게 깜짝 선물로 멤버십을 전하는 건 어떨까요? 특별한 날을 더욱 특별하게 만들 수 있을 거예요.</p>
+                    <p>멤버십을 친구들과 함께 공유하면 더욱 즐거운 추을 만들 수 있어요. 소중한 사람에게 깜짝 선물로 멤버십을 전하는 건 어떨까요? 특별한 날을 더욱 특별하게 만들 수 있을 거예요.</p>
                 </div>
                 
                 <div class="tip">

@@ -177,6 +177,47 @@
                 display: none;
             }
         }
+
+        .single-image {
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        .fit-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .single-image {
+                margin-left: -16px;
+                margin-right: -16px;
+                width: calc(100% + 32px);
+            }
+        }
+
+        .faq-section {
+            margin-bottom: 32px;
+        }
+        .faq-item {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 8px rgba(177, 177, 177, 0.05);
+        }
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            color: #5653FE;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -197,6 +238,10 @@
                     <span class="emphasis">주의:</span> 멤버십 코드는 한 번만 사용할 수 있으며, 등록 후에는 취소할 수 없습니다. 신중하게 확인 후 등록해주세요.
                 </div>
 
+                <div class="image-container single-image">
+                    <img src="image/register_membership.png" alt="멤버십 등록 화면" class="fit-image">
+                </div>
+
                 <h2 class="section-title">💎 멤버십 사용하기</h2>
                 <div class="text-block">
                     등록된 멤버십은 '내 멤버십' 섹션에서 확인할 수 있습니다. 각 멤버십 카드를 클릭하면 상세 정보와 함께 QR 코드가 나타납니다. 이벤트 입장 시 이 QR 코드를 제시하면 됩니다.
@@ -205,43 +250,23 @@
                     <span class="emphasis">팁:</span> QR 코드 스캔이 원활하도록 화면 밝기를 최대로 설정하는 것이 좋습니다.
                 </div>
 
-                <div class="image-container">
-                    <div class="slide">
-                        <img src="image/register_membership.png" alt="멤버십 등록 화면">
+                <div class="image-container single-image">
+                    <img src="image/use_membership.png" alt="멤버십 등록 화면" class="fit-image">
+                </div>
+
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q: 멤버십을 잃어버렸어요. 어떻게 해야 하나요?</h3>
+                        <p class="faq-answer">A: 걱정마세요! '내 멤버십' 섹션에서 언제든지 QR 코드를 다시 확인할 수 있습니다. 실수로 삭제했다면 고객센터에 문의해주세요.</p>
                     </div>
-                    <div class="slide">
-                        <img src="image/use_membership.png" alt="멤버십 사용 화면">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q: 멤버십을 양도할 수 있나요?</h3>
+                        <p class="faq-answer">A: 네, 가능합니다. '멤버십 양도' 기능을 통해 다른 Memble 사용자에게 멤버십을 전달할 수 있습니다. 단, 일부 멤버십은 양도가 제한될 수 있으니 확인 후 진행해주세요.</p>
                     </div>
-                </div>
-                <div class="dot-indicators">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                </div>
-
-                <h2 class="section-title">🔔 알림 설정</h2>
-                <div class="text-block">
-                    이벤트 날짜가 다가오면 자동으로 알림을 받을 수 있습니다. 설정 메뉴에서 알림을 활성화하고, 원하는 시간을 선택하세요. 이벤트를 놓치지 않도록 도와드립니다!
-                </div>
-
-                <h2 class="section-title">👥 멤버십 공유하기</h2>
-                <div class="text-block">
-                    친구나 가족과 함께 즐기고 싶은가요? '멤버십 공유' 기능을 사용해보세요. 공유받은 사람도 동일한 QR 코드로 입장할 수 있습니다. 단, 동시 입장은 불가능하니 주의해주세요.
-                </div>
-
-                <div class="tip">
-                    <strong>💡 꿀팁:</strong> 멤버십마다 특별한 혜택이 숨어있을 수 있어요. 멤버십 카드를 자세히 살펴보고, 숨겨진 버튼이나 정보를 찾아보세요. 깜짝 선물이 기다리고 있을지도 몰라요!
-                </div>
-
-                <h2 class="section-title">❓ 자주 묻는 질문</h2>
-                <div class="text-block">
-                    Q: 멤버십을 잃어버렸어요. 어떻게 해야 하나요?<br>
-                    A: 걱정마세요! '내 멤버십' 섹션에서 언제든지 QR 코드를 다시 확인할 수 있습니다. 실수로 삭제했다면 고객센터에 문의해주세요.
-
-                    Q: 멤버십을 양도할 수 있나요?<br>
-                    A: 네, 가능합니다. '멤버십 양도' 기능을 통해 다른 Memble 사용자에게 멤버십을 전달할 수 있습니다. 단, 일부 멤버십은 양도가 제한될 수 있으니 확인 후 진행해주세요.
-
-                    Q: 오프라인 이벤트에서 인터넷 연결이 안 되면 어떡하나요?<br>
-                    A: Memble은 오프라인 모드도 지원합니다. 이벤트 참여 전에 앱을 한 번 실행해두면, QR 코드가 로컬에 저장되어 인터넷 없이도 사용할 수 있습니다.
+                    <div class="faq-item">
+                        <h3 class="faq-question">Q: 오프라인 이벤트에서 인터넷 연결이 안 되면 어떡하나요?</h3>
+                        <p class="faq-answer">A: Memble은 오프라인 모드도 지원합니다. 이벤트 참여 전에 앱을 한 번 실행해두면, QR 코드가 로컬에 저장되어 인터넷 없이도 사용할 수 있습니다.</p>
+                    </div>
                 </div>
 
                 <h2 class="section-title">🌟 마치며</h2>
