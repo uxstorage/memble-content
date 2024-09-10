@@ -36,15 +36,24 @@
         .wrapper {
             min-height: calc(100vh - 240px);
         }
+        .main-title-container {
+            margin-bottom: 30px;
+        }
         .main-title {
-            font-size: 36px;
-            line-height: 1.3;
+            font-size: 42px;
+            line-height: 1.2;
             font-weight: 800;
-            background: linear-gradient(100deg, #4800ff, #c300ff);
+            background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-left: 0;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+            max-width: 800px;
         }
         .page-links {
             display: flex;
@@ -261,7 +270,10 @@
                 width: 100%;
             }
             .main-title {
-                font-size: 28px;
+                font-size: 32px;
+            }
+            .subtitle {
+                font-size: 16px;
             }
             .page-link h2 {
                 font-size: 20px;
@@ -348,7 +360,10 @@
     <img src="image/memble-insider-banner-3d-membership.jpg" alt="Memble Insider 배너" class="banner">
     <div class="wrapper">
         <div class="container">
-            <h1 class="main-title">MEMBLE INSIDER</h1>
+            <div class="main-title-container">
+                <div class="main-title">MEMBLE INSIDER</div>
+                <div class="subtitle">MEMBLE의 최신 소식과 유용한 정보를 한눈에! 여기서 멤블의 모든 것을 쉽고 빠르게 확인하세요. 당신의 멤블 경험을 더욱 특별하게 만들어드립니다.</div>
+            </div>
             <div class="tab">
                 <div class="skeleton-tab"></div>
                 <div class="skeleton-tab"></div>

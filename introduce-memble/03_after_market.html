@@ -16,7 +16,7 @@
         }
         .wrapper {
             width: 100%;
-            max-width: 768px;
+            max-width: 100%; /* 수정: 최대 너비 제한 제거 */
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -26,6 +26,8 @@
         .content {
             flex: 1;
             width: 100%;
+            max-width: 768px; /* 추가: 컨텐츠 최대 너비 설정 */
+            margin: 0 auto; /* 추가: 중앙 정렬 */
         }
         .container {
             width: 100%;
@@ -85,12 +87,13 @@
             width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
-            padding: 64px 16px;
-            box-sizing: border-box;
+            margin-top: 24px;
         }
         .footer-content {
             max-width: 768px;
             margin: 0 auto;
+            padding: 24px 16px;
+            box-sizing: border-box;
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
@@ -159,7 +162,7 @@
                     양도 중인 멤버십의 상세 정보를 한눈에 확인할 수 있어요 (이벤트명, 날짜, 좌석 등). 판매자가 제시한 가격과 원가를 비교해볼 수 있는 기능도 추후에 고려 중이에요. 다양한 카테고리의 양도 멤버십 상품을 스크롤하며 구경해보세요. 인기 상품과 새로 등록된 상품을 쉽게 찾아볼 수 있어요.
                 </div>
                 <div class="text-block">
-                    Rapbeat Festival 2024부터 인기 콘서트까지, 다양한 양도 멤버십이 여러분을 기다리고 있어요!
+                    Rapbeat Festival 2024���터 인기 콘서트까지, 다양한 양도 멤버십이 여러분을 기다리고 있어요!
                 </div>
                 <div class="tip">
                     <strong>💡 꿀팁:</strong> 인기 멤버십은 순식간에 거래될 수 있어요! 관심 있는 양도 게시글을 자주 확인하세요.
