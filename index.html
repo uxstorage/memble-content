@@ -9,7 +9,7 @@
             font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0 20px; /* 좌우 여백 추가 */
+            padding: 0 20px;
             color: #333;
             background-color: #f8f9fa;
             word-break: keep-all;
@@ -22,15 +22,15 @@
         }
         .container {
             width: 100%;
-            max-width: 1160px; /* 1200px - (20px * 2) */
+            max-width: 1160px;
             margin: 0 auto;
             box-sizing: border-box;
         }
         .banner {
-            width: calc(100% + 40px); /* body의 padding을 고려하여 조정 */
+            width: calc(100% + 40px);
             max-height: 200px;
             object-fit: cover;
-            margin-left: -20px; /* body의 왼쪽 padding만큼 이동 */
+            margin-left: -20px;
             margin-bottom: 20px;
         }
         .wrapper {
@@ -92,8 +92,8 @@
             color: white;
             padding: 40px 0;
             margin-top: 40px;
-            margin-left: -20px; /* body의 왼쪽 padding만큼 이동 */
-            width: calc(100% + 40px); /* body의 padding을 고려하여 조정 */
+            margin-left: -20px;
+            width: calc(100% + 40px);
         }
         .footer-content {
             display: flex;
@@ -329,10 +329,9 @@
             flex-shrink: 0;
         }
         
-        /* 반응형 디자인을 위한 미디어 쿼리 */
         @media (max-width: 768px) {
             body {
-                padding: 0 15px; /* 모바일에서 좌우 여백 줄임 */
+                padding: 0 15px;
             }
             .banner {
                 width: calc(100% + 30px);
