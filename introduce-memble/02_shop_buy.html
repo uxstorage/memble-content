@@ -12,6 +12,7 @@
             padding: 0;
             color: #333;
             background-color: #f8f9fa;
+            font-size: 16px; /* 기본 폰트 크기 설정 */
         }
         .wrapper {
             width: 100%;
@@ -70,7 +71,7 @@
             padding: 24px;
             margin: 32px 0 64px 0;
             font-size: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(167, 167, 167, 0.05);
             border: 1px solid rgba(0,0,0,0.05);
         }
         .tip strong {
@@ -125,7 +126,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             border: 1px solid rgba(0,0,0,0.05);
         }
-        .footer {
+        footer {
             width: 100%;
             background: linear-gradient(100deg, #5653FE 0%, #9C5BF0 100%);
             color: white;
@@ -150,6 +151,7 @@
         }
         .footer-text p {
             margin: 8px 0;
+            color: white; /* 명시적으로 흰색 지정 */
         }
         footer a, 
         footer a:visited, 
@@ -328,6 +330,25 @@
         .default-setting svg {
             margin-right: 8px;
         }
+
+        /* 선물옵션 아래 부분의 텍스트에 대한 스타일 */
+        .gift-option-text {
+            font-size: 16px; /* 기본 크기 */
+        }
+
+        /* 모바일 화면을 위한 미디어 쿼리 */
+        @media screen and (max-width: 768px) {
+            .gift-option-text {
+                font-size: 18px; /* 모바일에서 더 큰 크기 */
+            }
+        }
+
+        /* 더 작은 모바일 화면을 위한 추가 미디어 쿼리 */
+        @media screen and (max-width: 480px) {
+            .gift-option-text {
+                font-size: 20px; /* 더 작은 화면에서 더 큰 크기 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -360,7 +381,7 @@
 
                     <div class="image-container">
                         <div class="slide">
-                            <img src="image/membership_item.png" alt="멤블 프���미엄 멤버십">
+                            <img src="image/membership_item.png" alt="멤블 프���엄 멤버십">
                         </div>
                     </div>
 

@@ -114,6 +114,7 @@
         }
         .footer-text p {
             margin: 8px 0;
+            color: white; /* 명시적으로 흰색 지정 */
         }
         footer a, 
         footer a:visited, 
@@ -171,7 +172,7 @@
             background-color: #ffffff;
             border-radius: 16px;
             padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(167, 167, 167, 0.05);
             border: 1px solid rgba(0,0,0,0.05);
         }
 
@@ -185,6 +186,30 @@
         .tip-card p {
             font-size: 16px;
             margin: 0;
+        }
+
+        /* 기본 폰트 크기 설정 */
+        body {
+            font-size: 16px; /* 기본 크기 */
+        }
+
+        /* 선물옵션 아래 부분의 텍스트에 대한 스타일 */
+        .gift-option-text {
+            font-size: 16px; /* 기본 크기 */
+        }
+
+        /* 모바일 화면을 위한 미디어 쿼리 */
+        @media screen and (max-width: 768px) {
+            .gift-option-text {
+                font-size: 18px; /* 모바일에서 더 큰 크기 */
+            }
+        }
+
+        /* 더 작은 모바일 화면을 위한 추가 미디어 쿼리 */
+        @media screen and (max-width: 480px) {
+            .gift-option-text {
+                font-size: 20px; /* 더 작은 화면에서 더 큰 크기 */
+            }
         }
     </style>
 </head>

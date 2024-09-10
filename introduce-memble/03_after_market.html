@@ -16,18 +16,18 @@
         }
         .wrapper {
             width: 100%;
-            max-width: 100%; /* 수정: 최대 너비 제한 제거 */
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow-x: hidden; /* 추가 */
+            overflow-x: hidden;
         }
         .content {
             flex: 1;
             width: 100%;
-            max-width: 768px; /* 추가: 컨텐츠 최대 너비 설정 */
-            margin: 0 auto; /* 추가: 중앙 정렬 */
+            max-width: 768px;
+            margin: 0 auto;
         }
         .container {
             width: 100%;
@@ -35,15 +35,16 @@
             padding-right: 16px;
             box-sizing: border-box;
         }
-        .hero-container {
+        .hero-container,
+        .image-container {
             width: 100%;
             overflow: hidden;
         }
-        .hero-image {
+        .hero-image,
+        .slide img {
             width: 100%;
             height: auto;
             object-fit: cover;
-            object-position: center;
         }
         .main-title {
             font-size: 32px;
@@ -70,7 +71,7 @@
             padding: 24px;
             margin: 32px 0 64px 0;
             font-size: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(167, 167, 167, 0.05);
         }
         .tip strong {
             color: #5653FE;
@@ -122,24 +123,32 @@
                 width: 100%;
             }
 
-            .hero-container {
+            .content {
+                width: 100%;
+                max-width: none;
+                padding: 0;
+            }
+
+            .container {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .hero-container,
+            .image-container {
                 margin-left: -16px;
                 margin-right: -16px;
                 width: calc(100% + 32px);
             }
 
-            footer {
-                width: 100vw;
-                margin-left: calc(-50vw + 50%);
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .footer-content {
-                padding-left: 16px;
-                padding-right: 16px;
+            .hero-image,
+            .slide img {
+                width: 100%;
+                height: auto;
+                display: block;
             }
         }
+
     </style>
 </head>
 <body>
@@ -158,22 +167,33 @@
                 </div>
 
                 <h3 class="section-title">🎫 양도마켓 상품 둘러보기</h3>
+
                 <div class="text-block">
-                    양도 중인 멤버십의 상세 정보를 한눈에 확인할 수 있어요 (이벤트명, 날짜, 좌석 등). 판매자가 제시한 가격과 원가를 비교해볼 수 있는 기능도 추후에 고려 중이에요. 다양한 카테고리의 양도 멤버십 상품을 스크롤하며 구경해보세요. 인기 상품과 새로 등록된 상품을 쉽게 찾아볼 수 있어요.
+                    양도 중인 멤버십의 상세 정보를 한눈 확인할 수 있어요 (이벤트명, 날짜, 좌석 등). 판매자가 제시한 가격과 원가를 비교해볼 수 있는 기능도 추후에 고려 중이에요. 다양한 카테고리의 양도 멤버십 상품을 스크롤하며 구경해보세요. 인기 상품과 새로 등록된 상품을 쉽게 찾아볼 수 있어요.
                 </div>
-                <div class="text-block">
-                    현재는 Rapbeat Festival 멤버십이 여러분을 기다리고 있어요!
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="image/assignment.png" alt="멤블 양도마켓 상품">
+                    </div>
                 </div>
                 <div class="tip">
                     <strong>💡 꿀팁:</strong> 인기 멤버십은 순식간에 거래될 수 있어요! 관심 있는 양도 게시글을 자주 확인하세요.
                 </div>
 
                 <h3 class="section-title">💎 나의 멤버십 양도</h3>
+                
                 <div class="text-block">
                     보유중인 멤버십을 양도마켓에 등록해보세요!
                 </div>
+
+
                 <div class="text-block">
                     더 이상 사용하지 못하는 멤버십, 새로운 주인을 찾아주세요 ✨ 몇 번의 클릭만으로 멤버십 정보를 입력하고 가격을 설정할 수 있어요 💸 추후에 구매 희망자와의 실시간 채팅 기능을 준비해볼 예정이에요. 더욱 빠르고 편리한 거래 경험을 제공하기 위해 노력하고 있어요! 😊
+                </div>
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="image/register_assignment.png" alt="멤블 양도마켓 상품">
+                    </div>
                 </div>
                 <div class="tip">
                     <strong>💡 꿀팁:</strong> 정확한 멤버십 정보와 합리적인 가격 설정으로 빠른 거래를 유도해보세요!
