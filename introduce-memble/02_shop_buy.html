@@ -250,26 +250,25 @@
             margin-bottom: 12px;
         }
 
-        .gift-option-card h5 {
+        .gift-option-title {
             color: #5653FE;
             font-size: 18px;
+            font-weight: bold;
             margin-bottom: 12px;
         }
 
-        .gift-option-card p {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.5;
+        .gift-option-text {
+            font-size: 16px; 
         }
 
         @media screen and (max-width: 768px) {
-            .gift-option-card p {
+            .gift-option-text {
                 font-size: 18px;
             }
         }
 
         @media screen and (max-width: 480px) {
-            .gift-option-card p {
+            .gift-option-text {
                 font-size: 20px;
             }
         }
@@ -344,25 +343,6 @@
 
         .default-setting svg {
             margin-right: 8px;
-        }
-
-
-        .gift-option-text {
-            font-size: 16px; 
-        }
-
-
-        @media screen and (max-width: 768px) {
-            .gift-option-text {
-                font-size: 18px;
-            }
-        }
-
-
-        @media screen and (max-width: 480px) {
-            .gift-option-text {
-                font-size: 20px;
-            }
         }
     </style>
 </head>
@@ -442,13 +422,13 @@
                     <div class="gift-option-cards">
                         <div class="gift-option-card">
                             <div class="gift-option-icon">🎫</div>
-                            <h5>멤버십 직접 선물하기</h5>
-                            <p>선물 받는 사람의 계정으로 멤버십을 직접 전달합니다. 받는 사람이 즉시 멤버십 혜택을 누릴 수 있어요.</p>
+                            <div class="gift-option-title">멤버십 직접 선물하기</div>
+                            <div class="gift-option-text">선물 받는 사람의 계정으로 멤버십을 직접 전달합니다. 받는 사람이 즉시 멤버십 혜택을 누릴 수 있어요.</div>
                         </div>
                         <div class="gift-option-card">
                             <div class="gift-option-icon">🔄</div>
-                            <h5>멤버십 교환권 선물하기</h5>
-                            <p>구매한 멤버십 패키지에 포함된 교환권 중 하나를 선물합니다. 받는 사람은 이 교환권을 원하는 시기에 멤버십으로 교환할 수 있습니다.</p>
+                            <div class="gift-option-title">멤버십 교환권 선물하기</div>
+                            <div class="gift-option-text">구매한 멤버십 패키지에 포함된 교환권 중 하나를 선물합니다. 받는 사람은 이 교환권을 원하는 시기에 멤버십으로 교환할 수 있습니다.</div>
                         </div>
                     </div>
 
