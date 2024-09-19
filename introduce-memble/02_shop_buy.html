@@ -344,6 +344,31 @@
         .default-setting svg {
             margin-right: 8px;
         }
+
+        body, html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .wrapper, .content, .container {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hero-image, .slide img, .gift-option-card, .network-card {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .gift-option-cards, .network-cards {
+                flex-direction: column;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -607,13 +632,12 @@
             showSlide(index);
         }
     
-        slider.addEventListener('scroll', () => {
-            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
-            if (index !== currentIndex) {
-                updateDots(index);
-                currentIndex = index;
-            }
-        });
+        function changeSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            showSlide(currentIndex);
+        }
     </script>
 </body>
 </html>
