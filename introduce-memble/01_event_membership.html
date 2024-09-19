@@ -99,13 +99,13 @@
             margin-top: 24px;
         }
         .footer-content {
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 24px 16px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         }
         .footer-logo {
             width: 128px;
@@ -152,6 +152,14 @@
             .wrapper {
                 width: 100%;
                 overflow-x: hidden;
+            }
+            .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+            }
+            .footer-logo {
+                margin-right: 0;
+                margin-bottom: 16px;
             }
 
             .hero-container,

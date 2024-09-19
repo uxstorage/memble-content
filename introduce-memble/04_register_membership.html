@@ -126,13 +126,13 @@
             margin-top: 24px;
         }
         .footer-content {
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 24px 16px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         }
         .footer-logo {
             width: 128px;
@@ -156,6 +156,14 @@
         @media (max-width: 767px) {
             .wrapper {
                 width: 100%;
+            }
+            .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+            }
+            .footer-logo {
+                margin-right: 0;
+                margin-bottom: 16px;
             }
 
             .hero-container,
@@ -234,8 +242,9 @@
                 
                 <h2 class="section-title">🎉 멤버십 등록하기</h2>
                 <div class="text-block">
-                    Memble에서 구매한 멤버십을 등록하는 방법은 매우 간단합니다. 
-                    ‘사용 가능’ 탭에서 등록하고자 하는 멤버십을 선택하고 ‘등록하기’ 버튼을 눌러주세요!                </div>
+                    Memble에서 구매한 멤버십을 등록하는 방법은 매우 간단합니다.
+                    <span class="emphasis">홈 화면의 하단에 My membership을 위로 올려 ‘사용가능’ 탭</span> 
+                    에서 등록하고자 하는 멤버십을 선택하고 ‘등록하기’ 버튼을 눌러주세요!                </div>
                 <div class="text-block">
                     <span class="emphasis">주의:</span> 멤버십 등록 후에는 등록을 취소할 수 없습니다. 신중하게 확인 후 등록해주세요.
                 </div>
