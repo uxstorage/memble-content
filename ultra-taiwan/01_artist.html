@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ultra Taiwan 2024 Artist Guide</title>
+    <style>
+        :root {
+            --primary: #5653FE;
+            --secondary: #9C5BF0;
+            --text-primary: #1A1A1A;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            word-break: keep-all;
+            letter-spacing: -0.3px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('image/umf2016.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            margin: -40px -20px 40px;
+            text-align: center;
+            width: calc(100% + 40px);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .notice-section {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(86, 83, 254, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .notice-section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(86, 83, 254, 0.12);
+        }
+
+        .notice-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .notice-card {
+            background: rgba(86, 83, 254, 0.02);
+            border: 1px solid rgba(86, 83, 254, 0.1);
+            padding: 28px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .notice-card:hover {
+            background: rgba(86, 83, 254, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(86, 83, 254, 0.06);
+        }
+
+        .notice-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-content {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, rgba(255, 75, 75, 0.05), rgba(255, 75, 75, 0.02));
+            border-left: 4px solid #ff4b4b;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(86, 83, 254, 0.08), rgba(156, 91, 240, 0.08));
+            border-radius: 24px;
+            padding: 32px;
+            margin: 40px 0;
+            color: var(--primary);
+        }
+
+        .warning-box h4 {
+            font-size: 24px;
+            margin: 0 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .warning-box p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 20px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 40px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(86, 83, 254, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(86, 83, 254, 0.3);
+        }
+
+        .ticket-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 767px) {
+            .wrapper {
+                padding: 20px 16px;
+            }
+
+            .hero-section {
+                margin: -20px -16px 40px;
+                width: calc(100% + 32px);
+                padding: 80px 16px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .notice-section {
+                padding: 24px;
+                border-radius: 24px;
+            }
+
+            .notice-section h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            .notice-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .notice-card {
+                padding: 20px;
+            }
+
+            .warning-box {
+                padding: 24px;
+                margin: 24px 0;
+            }
+        }
+
+        .artist-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 24px;
+            margin: 24px 0;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-image {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">ULTRA TAIWAN 2024<br>Artist Guide</h1>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>🎵 Get Ready for the Beat!</h4>
+            <p>Prepare yourself for an unforgettable experience with world-class DJs and producers at Ultra Taiwan 2024!
+            </p>
+        </div>
+
+        <section class="notice-section">
+            <h2>🎧 Day 1 Headliners (November 16)</h2>
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://media4.giphy.com/media/3o6ZtpgqeYeWQQtMkg/giphy.gif" alt="Hardwell Performance 1" class="slider-image">
+                    <img src="https://i.gifer.com/7LYe.gif" alt="Hardwell Performance 2" class="slider-image">
+                    <img src="https://giffiles.alphacoders.com/136/13623.gif" alt="Hardwell Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>👑</span>Hardwell
+                </div>
+                <div class="notice-content">
+                    The legendary Dutch DJ and producer has revolutionized the EDM scene with his signature Big Room and Progressive House sound. Known for anthems like "Spaceman" and his groundbreaking "REBELS NEVER DIE" album, Hardwell's return to touring has brought a darker, techno-influenced evolution to his music.
+                </div>
+            </div>
+
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://i.ytimg.com/vi/79Ugy7S1zfU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwLoA6hxmw_3h1Rgwz6tc8-pPxsw" alt="Chase & Status Performance 1" class="slider-image">
+                    <img src="https://i.ytimg.com/vi/Rg41ylJETkU/maxresdefault.jpg" alt="Chase & Status Performance 2" class="slider-image">
+                    <img src="https://assets.beatportal.com/images/transforms/content-item/_1920x1080_crop_center-center_none/585149/Chase-Status-Stormzy.webp" alt="Chase & Status Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>🥁</span>Chase & Status
+                </div>
+                <div class="notice-content">
+                    This iconic British duo has been at the forefront of drum and bass for over a decade. Their unique fusion of DnB, dubstep, and electronic elements has influenced countless artists. Expect an explosive live performance featuring their signature tracks and new material.                </div>
+            </div>
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://media.giphy.com/media/iihNSdGOURkmFRL97G/giphy.gif?cid=ecf05e47arvmh1gkf71uempvriszryvnsl6kxxrotds4qk9h&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Madeon Performance 1" class="slider-image">
+                    <img src="https://i.ytimg.com/vi/e3ZB1yLBhf8/maxresdefault.jpg" alt="Madeon Performance 2" class="slider-image">
+                    <img src="https://lh3.googleusercontent.com/nRG7zRC2o5PRdZ9C9jjpHO15tJrfsBz0HVtSvMjBBZTtwRBukXN5XNQ5banxo8fZAfUj4cQydNNSwQ=w2880-h1200-p-l90-rj" alt="Madeon Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>🎧</span>Madeon
+                </div>
+                <div class="notice-content">
+                    A prodigy turned virtuoso, Madeon's live shows are a masterclass in electronic music production. His "Good Faith" era showcases a perfect blend of electronic, pop, and experimental sounds, accompanied by stunning visuals and live elements.                </div>
+            </div>
+            
+        </section>
+
+        <section class="notice-section">
+            <h2>🎵 Day 2 Headliners (November 17)</h2>
+            
+            <!-- Zedd -->
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://media.giphy.com/media/l0MYORCeSCsNu889O/giphy.gif?cid=ecf05e47sf4xvz30d7v90nogvupqc1zunceqi0xnrdphrpzh&ep=v1_gifs_search&rid=giphy.gif&ct=g://i.ytimg.com/vi/79Ugy7S1zfU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAwLoA6hxmw_3h1Rgwz6tc8-pPxsw" alt="Zedd Performance 1" class="slider-image">
+                    <img src="https://media.giphy.com/media/11DIZXUPYRjtYc/giphy.gif?cid=ecf05e473krse08yurg5bo3hi4he42eqdubym9p3d6x77fml&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Zedd Performance 2" class="slider-image">
+                    <img src="https://media.giphy.com/media/xUNd9B48zYjJbYie9a/giphy.gif?cid=ecf05e47i9eaelb5qpqy5lhr1gwkzdtggy4ahli2j98ffsg0&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Zedd Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>🎹</span>Zedd
+                </div>
+                <div class="notice-content">
+                    A classically trained musician turned EDM superstar, Zedd's sets are known for their perfect mixing and musical complexity. His signature style combines progressive house with pop sensibilities, creating unforgettable festival moments.                </div>
+            </div>
+
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://media.giphy.com/media/3ohze0GlJYlvGHCHQY/giphy.gif?cid=ecf05e47zt32rk7e8p6azud3vybto93nzyzmz9cspzn2w60u&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Dj snake Performance 1" class="slider-image">
+                    <img src="https://media.giphy.com/media/ZvabNZr3uJ16aIRrzW/giphy.gif?cid=ecf05e47cjahl7nuzn06lp3wmxx6gd4dogk6w3jrwtvh8ekp&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Dj snake Performance 2" class="slider-image">
+                    <img src="https://media.giphy.com/media/l0IycjoXFvdFAXG9y/giphy.gif?cid=ecf05e47ypx5fyqd9tjpbpnil7iy85tp8ewe153xebfw0ec9&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Dj snake Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>🐍</span>DJ Snake
+                </div>
+                <div class="notice-content">
+                    The French phenomenon brings his trap-influenced EDM style to the main stage. Known for mega-hits like "Turn Down for What" and "Lean On," DJ Snake's sets are a perfect blend of hard-hitting beats and crowd-pleasing anthems.                </div>
+            </div>
+
+            <div class="artist-slider">
+                <div class="slider-container">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/99cfb594723557.5e8f388d792c2.gif" alt="BTSM Performance 1" class="slider-image">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/060a0185256137.5d791fff2ea64.gif" alt="BTSM Performance 2" class="slider-image">
+                    <img src="https://i.namu.wiki/i/gIdXSZbLJRYd01Iyq_Ms8ml3tJs_MPWknyvoyReL9VB49SiURpilpW-ZvC02svYNMM21gqbJPtIsnSRS-zG2Zw.webp" alt="BTSM Performance 3" class="slider-image">
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>🐯</span>Black Tiger Sex Machine
+                </div>
+                <div class="notice-content">
+                    This Montreal-based electronic music trio brings their signature cyber-apocalyptic performance style to the stage2. Known for their heavy electro sound and iconic LED tiger helmets, BTSM delivers an intense live performance that goes beyond typical DJ sets3. Their unique blend of aggressive electronic music combines elements of dubstep, electro house, and industrial sounds, creating an immersive audio-visual experience4. Fans can expect a high-energy show featuring tracks from their latest album "Once upon a Time in Cyberworld" alongside their classic hits3.            </div>
+
+        </section>
+
+        <div class="warning-box">
+            <h4>💡 How to Make the Most of Ultra Taiwan</h4>
+            <p>
+                Want to experience Ultra Taiwan like a pro? Here are some essential tips to maximize your festival experience!<br><br>
+                
+                <strong>🕒 Arrive Early</strong><br>
+                Want to get up close to your favorite artists? Plan to arrive at least 30 minutes before their sets. 
+                The front sections of the Main Stage fill up quickly, especially for headliners!<br><br>
+                
+                <strong>💧 Stay Hydrated</strong><br>
+                The energy at EDM festivals is intense! Make sure to drink water between sets.
+                While water is available for purchase at the venue, we recommend bringing your own bottle to stay hydrated throughout the event.<br><br>
+                
+                <strong>📱 Check the Schedule</strong><br>
+                Plan your day by checking set times in advance.
+                Don't miss the epic performances by Hardwell and Zedd - these are guaranteed to be festival highlights!<br><br>
+                
+                <strong>🎆 Enjoy the Visual Experience</strong><br>
+                Ultra is famous not just for music, but for its spectacular laser shows and special effects.
+                The visual experience becomes even more magical after sunset, creating unforgettable moments!
+            </p>
+        </div>
+
+        <a href="https://ultra-taiwan.com/tickets" class="cta-button">
+            <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9 18V5L21 3V16M9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C7.65685 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Get Your Tickets Now
+        </a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.artist-slider').forEach(slider => {
+            const container = slider.querySelector('.slider-container');
+            const dots = slider.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                container.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % 3;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
