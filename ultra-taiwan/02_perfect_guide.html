@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ultra Taiwan 2024 Complete Festival Guide</title>
+    <style>
+        :root {
+            --primary: #5653FE;
+            --secondary: #9C5BF0;
+            --text-primary: #1A1A1A;
+            --text-secondary: #454545;
+            --bg-light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            word-break: keep-all;
+            letter-spacing: -0.3px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('image/umf2016.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            margin: -40px -20px 40px;
+            text-align: center;
+            width: calc(100% + 40px);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .notice-section {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(86, 83, 254, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .notice-section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(86, 83, 254, 0.12);
+        }
+
+        .notice-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .notice-card {
+            background: rgba(86, 83, 254, 0.02);
+            border: 1px solid rgba(86, 83, 254, 0.1);
+            padding: 28px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .notice-card:hover {
+            background: rgba(86, 83, 254, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(86, 83, 254, 0.06);
+        }
+
+        .notice-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-content {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, rgba(255, 75, 75, 0.05), rgba(255, 75, 75, 0.02));
+            border-left: 4px solid #ff4b4b;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(86, 83, 254, 0.08), rgba(156, 91, 240, 0.08));
+            border-radius: 24px;
+            padding: 32px;
+            margin: 40px 0;
+            color: var(--primary);
+        }
+
+        .warning-box h4 {
+            font-size: 24px;
+            margin: 0 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .warning-box p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 20px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 40px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(86, 83, 254, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(86, 83, 254, 0.3);
+        }
+
+        .ticket-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .venue-card {
+            grid-column: 1 / -1;
+            /* 전체 너비 사용 */
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            background: var(--bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .calendar-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(86, 83, 254, 0.2);
+        }
+
+        .calendar-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 767px) {
+            .wrapper {
+                padding: 20px 16px;
+            }
+
+            .hero-section {
+                margin: -20px -16px 40px;
+                width: calc(100% + 32px);
+                padding: 80px 16px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .notice-section {
+                padding: 24px;
+                border-radius: 24px;
+            }
+
+            .notice-section h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            .notice-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .notice-card {
+                padding: 20px;
+            }
+
+            .warning-box {
+                padding: 24px;
+                margin: 24px 0;
+            }
+
+            .map-container iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">ULTRA TAIWAN 2024<br>Complete Festival Guide</h1>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>🎉 Ready for the Ultimate EDM Paradise?</h4>
+            <p>Get ready to lose yourself in Asia's most epic EDM festival! This November, Ultra Taiwan 2024 is about to
+                transform
+                Taipei's skyline into an electric wonderland. Picture this: world-class DJs, mind-blowing productions,
+                and thousands
+                of fellow ravers coming together at the stunning Dajia Riverside Park. Whether you're an Ultra veteran
+                or a first-timer,
+                we've got your back with this ultimate guide to make your Ultra experience absolutely legendary! 🎵✨</p>
+        </div>
+
+        <section class="notice-section">
+            <h2>📅 Your Ultimate Ultra Survival Guide</h2>
+            <div class="notice-grid">
+                <div class="notice-card venue-card">
+                    <div class="notice-title">
+                        <span>📍</span>The Epic Playground
+                    </div>
+                    <div class="notice-content">
+                        <strong>The Perfect Rave Spot:</strong> Dajia Riverside Park<br><br>
+                        Imagine dancing your heart out in a massive 100,000-square-meter festival ground, with Taipei's
+                        glittering skyline as your backdrop and state-of-the-art sound systems pumping out your favorite
+                        beats.
+                        This isn't just any venue - it's your EDM paradise! 🌆<br><br>
+
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.0912564338836!2d121.5310672!3d25.0738583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac0099201ca3%3A0xe5164eddb6bbeab1!2sDajia%20Riverside%20Park!5e0!3m2!1sko!2skr!4v1710830655611!5m2!1sko!2skr"
+                                width="100%" height="300" 
+                                style="border:0; border-radius: 16px; margin: 16px 0;"
+                                allowfullscreen="" 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                                지도를 불러올 수 없습니다. <a href="https://maps.app.goo.gl/qCqZp91qd898ULjo8" target="_blank">여기를 클릭하여 구글 맵에서 보기</a>
+                            </iframe>
+                        </div>
+
+                        <strong>What Makes This Spot Extra Special:</strong><br>
+                        - Main Stage with earth-shaking sound system 🔊<br>
+                        - Underground vibes at RESISTANCE stage 🎵<br>
+                        - Food heaven with local & international bites 🍜<br>
+                        - Chill zones for when you need a breather 😌<br>
+                        - Clean facilities & medical team on standby 🏥<br>
+                        - Easy access from central Taipei 🚇
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice-section">
+            <h2>🎫 Your Ultimate Ticket Guide</h2>
+            <div class="notice-card" style="margin-bottom: 24px;">
+                <div class="notice-title">
+                    <span>⏰</span>Day 1: The Opening Extravaganza (Sat, Nov 16)
+                </div>
+                <div class="notice-content">
+                    <strong>Your Saturday Adventure: 15:00 - 22:00</strong><br><br>
+                    <strong>Epic Lineup Alert! 🎵</strong><br>
+                    - 14:00: Gates Open (Early birds catch the best spots!)<br>
+                    - 15:00-16:30: Local DJ Showcase - Experience Taiwan's finest talents<br>
+                    - 16:30-18:00: Chase & Status LIVE - Get ready for drum & bass madness!<br>
+                    - 18:00-19:30: Madeon 'Good Faith Forever' - Prepare for a visual feast<br>
+                    - 19:30-21:00: Sub Focus b2b Dimension - Double trouble alert!<br>
+                    - 21:00-22:00: Hardwell 'REBELS NEVER DIE' - The legend returns! 🔥<br><br>
+
+                    <strong>Day 1 Highlights:</strong><br>
+                    - Sunset vibes with the city skyline 🌅<br>
+                    - Mind-blowing light show after dark ✨<br>
+                    - Special pyro moments during headliners 💥<br><br>
+
+                    <a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20241116T140000%0D%0ADTEND:20241116T220000%0D%0ASUMMARY:Ultra Taiwan 2024 - Day 1: Hardwell, Madeon & More!%0D%0ALOCATION:Dajia Riverside Park, Taipei%0D%0ADESCRIPTION:Get ready for an epic night with Hardwell, Madeon, Chase & Status and more! Don't forget to arrive early!%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR"
+                        class="calendar-button" download="ultra-taiwan-2024-day1.ics">
+                        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Save This Epic Night
+                    </a>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    <span>⏰</span>Day 2: The Grand Finale (Sun, Nov 17)
+                </div>
+                <div class="notice-content">
+                    <strong>Sunday Funday: 13:30 - 22:00</strong><br><br>
+                    <strong>Get Ready to Make History! 🎉</strong><br>
+                    - 13:00: Early Entry (Pro tip: Beat the crowds!)<br>
+                    - 13:30-15:00: Asian DJ Showcase - Discover Asia's rising stars<br>
+                    - 15:00-16:30: Black Tiger Sex Machine - Enter the cyber world 🐯<br>
+                    - 16:30-18:00: DJ Snake - Prepare for absolute mayhem!<br>
+                    - 18:00-19:30: Above & Beyond - Trance family, unite! 💫<br>
+                    - 19:30-21:00: Zedd - The master of progressive house<br>
+                    - 21:00-22:00: Epic Closing Ceremony - One last dance! 🎆<br><br>
+
+                    <strong>Day 2 Special Moments:</strong><br>
+                    - Extended festival hours for maximum fun ⏰<br>
+                    - Surprise guest appearances possible 👀<br>
+                    - Most epic closing show in Ultra history 🎪<br><br>
+
+                    <a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0D%0AVERSION:2.0%0D%0ABEGIN:VEVENT%0D%0ADTSTART:20241117T130000%0D%0ADTEND:20241117T220000%0D%0ASUMMARY:Ultra Taiwan 2024 - Day 2: Zedd, DJ Snake & Grand Finale!%0D%0ALOCATION:Dajia Riverside Park, Taipei%0D%0ADESCRIPTION:The ultimate closing party with Zedd, DJ Snake, Above & Beyond and more! Don't miss the epic closing ceremony!%0D%0AEND:VEVENT%0D%0AEND:VCALENDAR"
+                        class="calendar-button" download="ultra-taiwan-2024-day2.ics">
+                        <svg class="calendar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Lock In The Final Party
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="notice-section">
+            <h2>🚇 Your Ultra Adventure Starts Here!</h2>
+            <div class="notice-grid">
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🚆</span>Getting to the Party
+                    </div>
+                    <div class="notice-content">
+                        <strong>Your Journey to Ultra Taiwan: A Transportation Guide</strong><br><br>
+
+                        Getting to Ultra Taiwan 2024 is an adventure in itself, and I'm here to guide you through all your transportation options to ensure you arrive ready to party!<br><br>
+
+                        <strong>Taking the Metro - The Local's Choice</strong><br>
+                        The easiest and most reliable way to reach the festival is via Taipei's excellent metro system. Simply hop on the Red Line and make your way to Yuanshan Station. Once there, head out through Exit 1, and you'll likely hear the distant thump of bass and see fellow ravers heading to the venue. It's just a scenic 15-minute walk from there. The metro runs from 6 AM until midnight, perfect for both early birds and night owls. Here's a pro tip: grab an EasyCard to make your journey smoother and avoid queuing for single tickets.<br><br>
+
+                        <strong>Ultra Festival Shuttle Service</strong><br>
+                        For those wanting a more direct route, the festival's official shuttle service is your best friend. These dedicated party buses run continuously from Taipei Main Station between 2 PM and 11 PM, with departures every 20 minutes. At just NT$50 per trip, it's incredibly cost-effective. Just remember to secure your shuttle passes early, as they tend to sell out quickly during peak times.<br><br>
+
+                        <strong>Ride-Sharing and Taxis</strong><br>
+                        If comfort is your priority, ride-sharing services and taxis are readily available. Expect to pay between NT$250-300 for your journey. To help with any language barriers, show your driver this destination: "大佳河濱公園". The festival has organized dedicated pickup and drop-off points, making your post-event journey home as smooth as possible.
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🏨</span>Your Ultra Crash Pad
+                    </div>
+                    <div class="notice-content">
+                        <strong>Where to Rest Those Dancing Feet 😴</strong><br><br>
+
+                        After dancing your heart out at Ultra Taiwan, you'll need the perfect place to recharge and rest up. Let me walk you through some amazing accommodation options that'll suit every budget and style.<br><br>
+
+                        <strong>Luxury Life 🌟</strong><br>
+                        Looking to treat yourself? The Grand Hyatt Taipei is your ultimate festival home base. Just a quick 10-minute journey from the festival grounds, this luxurious haven offers a stunning rooftop pool where you can recover and reminisce about last night's memories. Starting at NT$8,000 per night, you'll also enjoy the exclusive perk of a free festival shuttle service - now that's what I call arriving in style!<br><br>
+
+                        <strong>Mid-Range Magic ✨</strong><br>
+                        For those seeking the perfect balance of comfort and value, CityInn Plus hits all the right notes. Situated conveniently near Taipei Main Station, this stylish hotel features Instagram-worthy rooms that'll make your followers jealous. With rates from NT$2,500 per night and a 24/7 convenience store right around the corner for those midnight cravings, it's an ideal choice for the practical partygoer.<br><br>
+
+                        <strong>Budget-Friendly Beats 💰</strong><br>
+                        Solo ravers and social butterflies will love the vibe at Space Inn Hostel. This ultra-clean, ultra-fun spot is perfect for meeting fellow festival-goers and making new friends. At just NT$800 per night, you'll have plenty left over for festival merch! The energetic atmosphere makes it the perfect basecamp for solo adventurers looking to connect with the Ultra community.<br><br>
+
+                        <strong>Booking Pro Tips 🎯</strong><br>
+                        Here's the inside scoop on securing your perfect stay: Don't procrastinate - rooms during Ultra weekend disappear faster than festival tickets! Always opt for bookings with free cancellation for peace of mind, and consider joining hotel loyalty programs for extra perks. Most importantly, check how close your chosen spot is to MRT stations - your tired feet will thank you after the festival!
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🎒</span>Festival Survival Kit
+                    </div>
+                    <div class="notice-content">
+                        <strong>Pack Like a Pro! 🎯</strong><br><br>
+                        
+                        <strong>Must-Have Essentials:</strong><br>
+                        • ID & Ticket (duh!) 🎫<br>
+                        • Power bank (20,000mAh = party hero) 🔋<br>
+                        • Comfy shoes (your feet will thank you) 👟<br>
+                        • Small backpack/fanny pack 🎒<br>
+                        • Hand sanitizer & wet wipes 🧼<br>
+                        • Portable fan (be the crowd favorite) 🌬️<br><br>
+                        
+                        <strong>Weather Warriors:</strong><br>
+                        • Light raincoat (because Mother Nature raves too)<br>
+                        • Sunscreen (protect that party glow) ☀️<br>
+                        • Cap or bandana (style + function) 🧢<br><br>
+                        
+                        <strong>Leave These at Home:</strong><br>
+                        • Professional cameras (sorry, influencers!)<br>
+                        • Outside food/drinks (trust us on this)<br>
+                        • Anything glass (safety first!)<br>
+                        • Bad vibes (positive energy only!) ✨
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice-section">
+            <h2>💡 Ultra Pro Tips & Tricks</h2>
+            <div class="notice-grid">
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🎯</span>Level Up Your Ultra Experience
+                    </div>
+                    <div class="notice-content">
+                        <strong>Before You Rage 🎵</strong><br>
+                        Want to make the most of your Ultra experience? Start by downloading the Ultra app - it's like having a personal festival guide right in your pocket! Connect with fellow ravers by joining the Ultra Taiwan Discord community where you'll find tips, meetups and endless hype. Take some time to plan out your must-see sets and create a personalized schedule. Pro tip: Check out 1001tracklists to get a sneak peek of what your favorite artists might play. And don't forget to check that weather forecast - being prepared means more time for dancing!<br><br>
+
+                        <strong>Stage Strategy 101 🎪</strong><br>
+                        Let me share a little secret with you - the absolute sweet spot at the Main Stage is about 40 meters from the front. You'll get the perfect balance of visuals and sound, plus enough space to show off your best moves! If you're heading to the RESISTANCE stage, try going after 8PM when the crowds thin out a bit. For the best audio experience, position yourself near the sound booth where the engineers mix everything to perfection. And if you're dreaming of that front rail spot? Make sure to arrive at least 30 minutes before your favorite act - trust me, it's worth the wait!<br><br>
+
+                        <strong>Secret Photo Spots 📸</strong><br>
+                        Looking for that perfect Instagram shot? Head to the riverside between 5:30-6:30PM for absolutely magical sunset photos. Want to capture the energy of the show? Time your shots during the bass drops when the LED walls are at their most spectacular. For epic crowd shots that'll make your followers jealous, seek out the elevated areas around the festival grounds. Don't forget to tag #UltraTaiwan2024 - you might just see your shots featured on the official Ultra accounts!
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🍜</span>Food & Drink Strategy
+                    </div>
+                    <div class="notice-content">
+                        <strong>Fuel Your Rave 🔋</strong><br>
+                        Let's talk about keeping your energy levels up during the festival! Inside the venue, you'll want to get familiar with the food token system - grab these early and thank yourself later when you skip those long lines. And here's something that'll make your Instagram pop: they've got these amazing LED cotton candy treats that are basically made for social media! Don't worry about staying hydrated either - there are water stations scattered throughout where you can refill your bottle all day long. And when you're ready to kick things up a notch, check out their special Ultra cocktail menu for some festival-exclusive drinks! 🍹<br><br>
+
+                        <strong>Nearby Food Adventures:</strong><br>
+                        Now, let me tell you about some amazing spots around the festival grounds. First up is Din Tai Fung, just a quick 15-minute walk away. If you haven't tried their world-famous dumplings yet, you're in for a treat! It's the perfect spot to fuel up before a long night of dancing.<br><br>
+
+                        And here's my personal favorite - the Shilin Night Market, just two stops away on public transport. This place is an absolute paradise for food lovers! When those post-festival munchies hit (and trust me, they will), head over here for an incredible array of street food. Whatever you do, don't miss their legendary XXL chicken - it's basically a rite of passage for anyone visiting Taipei! 🍗
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🆘</span>Emergency & Support
+                    </div>
+                    <div class="notice-content">
+                        <strong>We've Got Your Back!</strong><br>
+                        • Medical tents at both stages<br>
+                        • Ground control team in blue shirts<br>
+                        • Information booth: Your go-to spot<br>
+                        • Lost & found service (until 1 week after)<br><br>
+                        
+                        <strong>Emergency Contacts:</strong><br>
+                        • Festival Hotline: 02-2719-0886<br>
+                        • Emergency: 119<br>
+                        • Police: 110<br>
+                        • Nearest Hospital: Taipei Veterans General<br><br>
+                        
+                        <strong>Weather Plan:</strong><br>
+                        The show goes on - rain or shine! ⛈️<br>
+                        • Covered areas marked on festival map<br>
+                        • Ponchos available for purchase<br>
+                        • Follow staff instructions during storms
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="warning-box">
+            <h4>📱 Stay Connected!</h4>
+            <p>
+                Join the Ultra Taiwan fam and never miss a beat! 🎵<br><br>
+                
+                <strong>Follow Us:</strong><br>
+                • Instagram: @ultratwn (daily stories & behind-the-scenes)<br>
+                • Facebook: Ultra Taiwan (exclusive announcements)<br>
+                • Twitter: @Ultra_Taiwan (real-time updates)<br>
+                • TikTok: @ultrataiwan (viral moments)<br><br>
+                
+                <strong>Share Your Journey:</strong><br>
+                Use #UltraTaiwan2024 #UltraAsia #UltraWorldwide<br>
+                Best content gets featured on our official channels!
+            </p>
+        </div>
+
+        <a href="https://ultra-taiwan.com/tickets" class="cta-button">
+            <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18V5L21 3V16M9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C7.65685 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Grab Your Tickets Now!
+        </a>
+
+        <div class="warning-box">
+            <h4>⚡ Final Hype Check!</h4>
+            <p>
+                Ready to make history at Ultra Taiwan 2024? This isn't just another festival - it's YOUR festival! 
+                Grab your squad, pack your gear, and get ready for the most epic weekend of your life! 
+                See you on the dancefloor!
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

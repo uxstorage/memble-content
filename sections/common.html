@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ultra Taiwan 2024 Common Guide</title>
+    <style>
+        :root {
+            --primary: #5653FE;
+            --secondary: #9C5BF0;
+            --text-primary: #1A1A1A;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            word-break: keep-all;
+            letter-spacing: -0.3px;
+        }
+
+        .wrapper {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('../ultra-taiwan/image/umf2016.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            margin-top: -40px;
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .notice-section {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(86, 83, 254, 0.08);
+        }
+
+        .notice-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .notice-card {
+            background: rgba(86, 83, 254, 0.02);
+            border: 1px solid rgba(86, 83, 254, 0.1);
+            padding: 28px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .notice-card:hover {
+            background: rgba(86, 83, 254, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(86, 83, 254, 0.06);
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 20px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 40px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(86, 83, 254, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(86, 83, 254, 0.3);
+        }
+
+        .ticket-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .warning-box {
+            background: white;
+            border-radius: 24px;
+            padding: 32px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(86, 83, 254, 0.08);
+        }
+
+        .warning-box h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 16px;
+            color: var(--text-primary);
+        }
+
+        .warning-box p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 767px) {
+            .wrapper {
+                padding: 20px 16px;
+            }
+
+            .hero-section {
+                padding: 80px 0;
+                margin-left: calc(-50vw + 50%);
+                margin-right: calc(-50vw + 50%);
+                margin-top: -20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .notice-section {
+                padding: 24px;
+                border-radius: 24px;
+            }
+
+            .notice-section h2 {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            .notice-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .notice-card {
+                padding: 20px;
+            }
+
+            .warning-box {
+                padding: 24px;
+                margin: 24px 0;
+            }
+        }
+
+        /* 텍스트 스타일 개선 */
+        .notice-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .notice-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notice-title span {
+            font-size: 28px;
+        }
+
+        .notice-content p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .notice-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .warning-box p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .warning-box strong {
+            color: var(--text-primary);
+            font-size: 18px;
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        /* 불릿 포인트 스타일 개선 */
+        .notice-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .notice-content li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        .notice-content li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 8px;
+        }
+
+        /* 강조 텍스트 효과 */
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(86, 83, 254, 0.1) 40%);
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Ultimate Guide to<br>ULTRA TAIWAN 2024</h1>
+            </div>
+        </div>
+
+        <div class="notice-section">
+            <h2>🎵 Hey Ultra Fam!</h2>
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px;">
+                Can you feel the excitement building? <span class="highlight">Ultra Taiwan 2024</span> is just around the corner, and we're here to make sure you're 100% ready for the most incredible weekend of your life! Whether this is your first Ultra or you're a seasoned raver, we've got all the insider tips and essential info you need. Let's dive in and make sure you're fully prepped for this <span class="highlight">epic adventure</span>! 🎉
+            </p>
+            
+            <div class="notice-grid">
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>🎪</span>The Ultimate Packing List
+                    </div>
+                    <div class="notice-content">
+                        <p>
+                            Listen up, fam! Here's what you absolutely can't forget to bring to make your Ultra experience amazing:<br><br>
+                            • Your golden ticket + ID (obviously!)<br>
+                            • Those comfy dancing shoes (trust us on this one)<br>
+                            • A small bag for essentials<br>
+                            • Power bank (for all those epic stories)<br>
+                            • Some cash (because festival food = life)<br>
+                            • Good vibes (most important!)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="notice-card">
+                    <div class="notice-title">
+                        <span>💫</span>Festival Life Hacks
+                    </div>
+                    <div class="notice-content">
+                        <p>
+                            Want to level up your festival game? Here are some pro moves that'll make your Ultra experience next level:<br><br>
+                            • Get there early (beat those queues!)<br>
+                            • Find your squad's meeting spot first thing<br>
+                            • Pace yourself - it's a marathon, not a sprint<br>
+                            • Make friends with your neighbors<br>
+                            • Take photos, but don't forget to live in the moment
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>✨ The Magic of Ultra</h4>
+            <p>
+                You know what makes Ultra Taiwan truly special? It's not just about the music (though let's be real, the lineup is INSANE! 🔥). It's about those magical moments - when the beat drops and you're surrounded by thousands of people all feeling that same energy. It's about the friends you'll make, the memories you'll create, and those "you had to be there" stories you'll tell for years to come.
+            </p>
+        </div>
+
+        <a href="https://ultra-taiwan.com/tickets" class="cta-button" aria-label="Purchase tickets for Ultra Taiwan 2024">
+            <svg class="ticket-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18V5L21 3V16M9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C7.65685 15 9 16.3431 9 18ZM21 16C21 17.6569 19.6569 19 18 19C16.3431 19 15 17.6569 15 16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Join The Ultra Family!
+        </a>
+    </div>
+</body>
+</html>
